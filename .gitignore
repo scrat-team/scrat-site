@@ -1,0 +1,6 @@
+component_modules
+node_modules
+.DS_Store
+*.bak
+*.tmp
+Thumbs.db
