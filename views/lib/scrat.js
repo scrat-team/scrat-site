@@ -85,7 +85,7 @@
             each(names, function (id) {
                 args.push(require(id));
             });
-            onload.apply(scrat, args);
+            onload && onload.apply(scrat, args);
             debug('scrat.async', '[' + names.join(', ') + '] callback called');
         });
         reactor.run();
