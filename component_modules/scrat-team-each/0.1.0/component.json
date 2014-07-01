@@ -1,0 +1,12 @@
+{
+  "name": "each",
+  "repo": "scrat-team/each",
+  "description": "A forEach shim for both array and object",
+  "version": "0.1.0",
+  "keywords": ["each", "forEach"],
+  "scripts": ["index.js"],
+  "dependencies": {
+    "scrat-team/type": "0.1.0"
+  },
+  "license": "MIT"
+}
