@@ -2,6 +2,6 @@
 
 module.exports = {
     getContent: function () {
-        return '<h1>Hello world!</h1>';
+        return __inline('index.md');
     }
 };

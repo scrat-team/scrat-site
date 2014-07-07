@@ -6,7 +6,7 @@ var each = require('each'),
     };
 
 site.register = function (name, view) {
-    return site.views[name] = view;
+    return (site.views[name] = view);
 };
 
 site.get = function (name) {
