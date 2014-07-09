@@ -18,7 +18,7 @@ require.async(['router', 'site', 'es5-safe', 'font-awesome'], function (router, 
     //带有page路径的路由
     router('/:page', function (ctx) {
         //从hash中获取页面名并加载
-        site.load(ctx.params.page);
+        site.load(ctx.params.page, true);
     });
     
     //其他未命中情况

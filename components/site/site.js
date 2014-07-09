@@ -2,6 +2,7 @@
 
 //require依赖的文件
 var extend = require('extend');
+var each = require('each');
 
 //定义页面和模块对应关系
 var views = {
@@ -38,12 +39,35 @@ exports.has = function(name){
 /**
  * 加载页面，未找到则展示404页面
  * @param {String} name 页面名
+ * @param {boolean} preload 是否预加载其他页面
  */
-exports.load = function(name){
+exports.load = function(name, preload){
+    //未注册页面则展示404
     name = this.has(name) ? name : '404';
+    //异步加载
     require.async(views[name], function(page){
-        console.log(page);
+
+        //如果开启预加载，则在完成当前页面加载之后去异步加载其他页面
+        if(preload){
+            //将其他页面收集起来
+            var others = [];
+            each(views, function(moduleName, pageName){
+                if(name !== pageName){
+                    others.push(moduleName);
+                }
+            });
+            //发起异步请求获取，不阻塞当前页面
+            require.async(others);
+        }
     });
+};
+
+/**
+ * 设置页面title
+ * @param {String} title
+ */
+exports.title = function(title){
+    document.title = title;
 };
 
 /**
