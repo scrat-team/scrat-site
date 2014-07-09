@@ -1,14 +1,21 @@
-//利用package.json文件定义项目名和版本
+// 排除源码目录下的node_modules目录，不对其进行构建
+fis.config.set('project.exclude', 'node_modules/**');
+
+// 利用package.json文件定义项目名和版本
 var meta = require('./package.json');
 fis.config.set('name', meta.name);
 fis.config.set('version', meta.version);
 
-//排除源码目录下的node_modules目录
-fis.config.set('project.exclude', 'node_modules/**');
-//开启localstorage缓存
+// 对md、tpl后缀的文件指定用fis-optimizer-html-minifier插件进行压缩
+fis.config.set('modules.optimizer.md', 'html-minifier');
+fis.config.set('modules.optimizer.tpl', 'html-minifier');
+
+// scrat.js框架开启localstorage缓存
 fis.config.set('framework.cache', true);
 
-//jshint配置
+// fis-lint-jshint插件配置
+// 在jshint基础上加上了i18n和ignored两项配置
+// 其他配置项请参阅jshint官网说明
 fis.config.set('settings.lint.jshint', {
     //报错信息翻译成中文
     i18n: 'zh-CN',
@@ -39,4 +46,15 @@ fis.config.set('settings.lint.jshint', {
     jquery: true,
     node: true,
     white: false
+});
+
+// fis-optimizer-html-minifier插件配置
+// fis直接将此配置传递给html-minfier模块
+// 因此相关配置项请参阅html-minifier文档
+
+fis.config.set('settings.optimizer.html-minifier', {
+    removeComments: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    removeAttributeQuotes: true
 });
