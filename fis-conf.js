@@ -3,12 +3,16 @@ var meta = require('./package.json');
 fis.config.set('name', meta.name);
 fis.config.set('version', meta.version);
 
-//排除
+//排除源码目录下的node_modules目录
 fis.config.set('project.exclude', 'node_modules/**');
+//开启localstorage缓存
 fis.config.set('framework.cache', true);
-fis.config.set('modules.optimizer.html', 'html-minifier');
+
+//jshint配置
 fis.config.set('settings.lint.jshint', {
+    //报错信息翻译成中文
     i18n: 'zh-CN',
+    //排除框架文件、第三方模块
     ignored: [
         'views/lib/**',
         'component_modules/**'

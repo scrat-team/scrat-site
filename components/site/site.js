@@ -1,38 +1,42 @@
 'use strict';
 
-var each = require('each'),
-    site = module.exports = {
-        views: {}
-    };
+//require依赖的文件
+var extend = require('extend');
 
-site.register = function (name, view) {
-    return (site.views[name] = view);
+//定义页面和模块对应关系
+var views = {
+    '404': 'pages/404',
+    'index': 'pages/index',
+    'getting-start': 'pages/getting-start'
 };
 
-site.get = function (name) {
-    if (!site.views.hasOwnProperty(name)) {
-        throw new Error('view not found');
+//使用__inline函数嵌入其他文件
+var tpl = {
+    layout: __inline('layout.tpl')
+};
+
+exports.register = function(name, moduleName){
+    switch(typeof name){
+        case 'string':
+            views[name] = moduleName;
+            break;
+        case 'object':
+            extend(views, name);
+            break;
     }
-    return site.views[name];
 };
 
-site.getOthers = function (name) {
-    var others = {};
-    each(site.views, function (view, n) {
-        if (n !== name) others[n] = view;
+exports.has = function(name){
+    return views.hasOwnProperty(name);
+};
+
+exports.load = function(name){
+    name = this.has(name) ? name : '404';
+    require.async(views[name], function(page){
+        console.log(page);
     });
-    return others;
 };
 
-site.load = function (name) {
-    var view = site.get(name),
-        others = site.getOthers(name);
-    site.unload(Object.keys(others));
-};
-
-site.unload = function (name) {
-    var names = Array.isArray(name) ? name : [name];
-    names.forEach(function (name) {
-
-    });
+exports.render = function(dom){
+    dom.innerHTML = tpl.layout;
 };
