@@ -33,7 +33,7 @@ fis.config.set('settings.lint.jshint', {
     noarg: true,
     noempty: true,
     nonew: true,
-    quotmark: "single",
+    quotmark: 'single',
     undef: true,
     unused: true,
     strict: true,
