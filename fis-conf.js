@@ -15,15 +15,16 @@ fis.config.set('framework.cache', true);
 
 // fis-lint-jshint插件配置
 // 在jshint基础上加上了i18n和ignored两项配置
-// 其他配置项请参阅jshint官网说明
+
 fis.config.set('settings.lint.jshint', {
-    //报错信息翻译成中文
+    // 报错信息翻译成中文
     i18n: 'zh-CN',
-    //排除框架文件、第三方模块
+    // 排除框架文件、第三方模块
     ignored: [
         'views/lib/**',
         'component_modules/**'
     ],
+    // 其他配置项请参阅jshint官网说明
     bitwise: true,
     camelcase: true,
     eqeqeq: true,
