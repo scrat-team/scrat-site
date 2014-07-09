@@ -11,7 +11,8 @@ require.config(__FRAMEWORK_CONFIG__);
  * 块及其依赖的模块，都完成后才会执行回调
  */
 require.async(['router', 'site', 'es5-safe', 'font-awesome'], function (router, site) {
-    
+
+    //渲染页面骨架
     site.render(document.body);
     
     //带有page路径的路由
