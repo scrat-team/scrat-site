@@ -10,11 +10,11 @@ var views = {
     'getting-start': 'pages/getting-start'
 };
 
-//使用__inline函数嵌入其他文件
-var tpl = {
-    layout: __inline('layout.tpl')
-};
-
+/**
+ * 注册页面
+ * @param {String|Object} name 页面名
+ * @param {String|undefined} moduleName 模块名
+ */
 exports.register = function(name, moduleName){
     switch(typeof name){
         case 'string':
@@ -26,10 +26,19 @@ exports.register = function(name, moduleName){
     }
 };
 
+/**
+ * 判断是否注册页面
+ * @param {String} name 页面名
+ * @returns {boolean}
+ */
 exports.has = function(name){
     return views.hasOwnProperty(name);
 };
 
+/**
+ * 加载页面，未找到则展示404页面
+ * @param {String} name 页面名
+ */
 exports.load = function(name){
     name = this.has(name) ? name : '404';
     require.async(views[name], function(page){
@@ -37,6 +46,12 @@ exports.load = function(name){
     });
 };
 
+/**
+ * 渲染页面骨架
+ * @param {HTMLElement} dom
+ */
 exports.render = function(dom){
-    dom.innerHTML = tpl.layout;
+    //使用__inline函数嵌入其他文件、图片
+    //这里用作内嵌模板，fis会将它编译成字符串嵌入
+    dom.innerHTML = __inline('layout.tpl');
 };
