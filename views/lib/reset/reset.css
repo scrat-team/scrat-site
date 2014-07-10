@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    color: #34495e;
 }
 ol, ul {
     list-style: none;
@@ -44,4 +45,17 @@ q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+a {
+    color: #7e8c8d;
+    text-decoration: underline;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden;
+}
+a:hover {
+    color: #1abc9c;
+    text-decoration: none;
 }

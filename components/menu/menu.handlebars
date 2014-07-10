@@ -1,0 +1,11 @@
+<div class="menu">
+    <a class="menu-logo transition-all" href="{{home}}">
+        <img src="{{logo}}" alt="logo" class="transition-all"/>
+    </a>
+    <i class="menu-switch fa fa-bars"></i>
+    <nav class="menu-list transition-all" style="height:{{height}}px">
+        {{#each items}}
+            <a href="{{href}}"><i class="fa fa-{{icon}}"></i> {{title}}</a>
+        {{/each}}
+    </nav>
+</div>

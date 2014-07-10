@@ -1,0 +1,48 @@
+.main {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 5%; left: 10%;
+    bottom: 5%; right: 10%;
+}
+
+.main-menu {
+    position: absolute;
+    top: 0; left: 0;
+    bottom: 0;
+    width: 150px;
+    background: #f2f2f2;
+}
+
+.main-content {
+    position: absolute;
+    top: 0; left: 150px;
+    bottom: 0; right: 0;
+}
+
+.transition-all {
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+
+    .main {
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+    }
+
+    .main-menu {
+        width: 100%;
+        bottom: auto;
+        height: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-content {
+        left: 0;
+        top: 40px;
+    }
+}

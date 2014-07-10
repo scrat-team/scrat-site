@@ -1,9 +1,0 @@
-<header>
-    头部
-</header>
-<section>
-    内容
-</section>
-<footer>
-    页脚
-</footer>
