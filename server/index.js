@@ -26,10 +26,10 @@ app.set('logger', console);
 app.enable('trust proxy');
 
 app.use(compress());
-app.use(middleware.combo(app.get('root') + '/public/c'));
+app.use(middleware.combo());
 app.use(middleware.router({index: '/' + meta.name + '/' + meta.version + '/index.html'}));
 // app.use('/api/*', middleware.proxy('http://cors-api-host'));
-app.use(middleware.static(app.get('root') + '/public'));
+app.use(middleware.static());
 app.use(middleware.error());
 
 if (require.main === module) {
