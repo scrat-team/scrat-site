@@ -19,7 +19,9 @@ module.exports = function (dir) {
             url = ~j ? req.originalUrl.slice(i + 2, j) : req.originalUrl.slice(i + 2);
             ext = path.extname(url);
             if (ext) res.type(ext.slice(1));
-            if (cache[url]) return res.send(cache[url]);
+
+            res.setHeader('Cache-Control', 'public, max-age=' +
+                (app.get('env') === 'production' ? 60 * 60 * 24 * 365 : 0));
 
             files = url.split(',');
             files.forEach(function (file) {
@@ -36,11 +38,10 @@ module.exports = function (dir) {
             });
 
             rs = contents.join('\n');
-            if (contents.length === files.length) {
-                cache[url] = rs;
-            } else {
+            if (contents.length !== files.length) {
                 logger.error('[combo] some files not found');
             }
+
             res.send(rs);
         } else {
             next();
