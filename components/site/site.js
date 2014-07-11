@@ -8,7 +8,7 @@ var each = require('each');
 var views = {
     '404': 'pages/404',
     'index': 'pages/index',
-    'getting-start': 'pages/getting-start'
+    'quick-start': 'pages/quick-start'
 };
 
 /**
@@ -44,9 +44,21 @@ exports.has = function(name){
 exports.load = function(name, preload){
     // 未注册页面则展示404
     name = this.has(name) ? name : '404';
+    var container = document.getElementById('main-views');
     // 异步加载
     require.async(views[name], function(page){
-        console.log(page);
+        var pages = container.querySelectorAll('[data-page]');
+        each(pages, function(dom){
+            var p = dom.getAttribute('data-page');
+            var clazz = dom.className.replace(/ active\b/, '');
+            if(p === name){
+                dom.innerHTML = '<div class="main-view-inner">' + page.getContent() + '</div>';
+                dom.className = clazz + ' active';
+            } else {
+                dom.className = clazz;
+            }
+        });
+
         // 如果开启预加载，则在完成当前页面加载之后去异步加载其他页面
         if(preload){
             // 将其他页面收集起来
@@ -79,7 +91,11 @@ exports.render = function(dom){
     // scrat已经配置了对handlebars后置的文件进行预编译，因此
     // 可以直接内嵌这里文件当做js函数执行
     var tpl = __inline('site.handlebars');
-    dom.innerHTML = tpl();
+    dom.innerHTML = tpl({
+        views: views
+    });
+
+    // 加载菜单模块
     var menu = require('menu');
     menu.render(document.getElementById('main-menu'));
 };
