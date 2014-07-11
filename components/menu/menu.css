@@ -33,7 +33,7 @@
     display: block;
     top: 120px;
     left: 0; right: 0;
-    z-index: 10000;
+    z-index: 1000;
     background: #f00;
 }
 
