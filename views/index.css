@@ -2,7 +2,6 @@
  * 使用@import url(path?__inline);来嵌入其他css文件
  */
 @import url('lib/reset/reset.css?__inline');
-@import url('lib/highlight/github.css?__inline');
 
 /*
  * 以下定义index.html页面中的基本骨架

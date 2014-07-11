@@ -3,13 +3,13 @@
 }
 
 .menu-logo {
-    display: block;
     height: 120px;
     position: relative;
     background: #1bbc9b;
 }
 
-.menu-logo img {
+.menu-logo > a {
+    display: block;
     width: 80px;
     height: 80px;
     border-radius: 1000px;
@@ -20,15 +20,21 @@
     left: 50%;
     margin-left: -45px;
     margin-top: -45px;
+    overflow: hidden;
+}
+
+.menu-logo img {
+    width: 100%;
+    height: 100%;
 }
 
 .menu-list {
     position: absolute;
     display: block;
-    top: 120px; bottom: 0;
+    top: 120px;
     left: 0; right: 0;
     z-index: 10000;
-    overflow: hidden;
+    background: #f00;
 }
 
 .menu-list a {
@@ -44,7 +50,7 @@
 }
 
 .menu-list a:last-child {
-    border-bottom: none;
+    border-bottom-color: transparent;
 }
 
 .menu-list a i {
@@ -57,32 +63,37 @@
     height: 20px;
     font-size: 20px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0; right: 0;
     color: #fff;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     display: none;
+    background: rgba(0,0,0, 0);
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
     .menu-logo {
         height: 40px;
     }
-    .menu-logo img {
+    .menu-logo a {
         width: 38px;
         height: 38px;
         top: 0;
         left: 0;
+        bottom: auto;
         margin: 0;
         border: 1px solid #fff;
         box-shadow: none;
         border-radius: 0;
     }
+    .menu-list a:last-child {
+        border-bottom: 1px solid #fff;
+    }
     .menu-list {
         top: 40px;
-        height: 0;
-        box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0, 0.3);
     }
     .menu-switch {
         display: block;

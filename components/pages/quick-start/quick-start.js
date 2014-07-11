@@ -1,5 +1,5 @@
 'use strict';
 
 exports.getContent = function () {
-    return '<h1>Getting Start</h1>';
+    return __inline('quick-start.md');
 };

@@ -52,7 +52,7 @@ exports.load = function(name, preload){
             var p = dom.getAttribute('data-page');
             var clazz = dom.className.replace(/ active\b/, '');
             if(p === name){
-                dom.innerHTML = '<div class="main-view-inner">' + page.getContent() + '</div>';
+                dom.innerHTML = '<div class="main-view-inner markdown-body">' + page.getContent() + '</div>';
                 dom.className = clazz + ' active';
             } else {
                 dom.className = clazz;

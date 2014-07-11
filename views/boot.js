@@ -10,18 +10,24 @@ require.config(__FRAMEWORK_CONFIG__);
  * require.async函数会根据require.config中的依赖关系去加载这些模
  * 块及其依赖的模块，都完成后才会执行回调
  */
-require.async(['router', 'site', 'es5-safe', 'font-awesome'], function (router, site) {
+require.async(['router', 'site', 'fastclick', 'es5-safe', 'font-awesome'], function (router, site, fastclick) {
 
-    //渲染页面骨架
+    // 使用fastclick
+    fastclick(document.body);
+
+    // 全屏
+    setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+
+    // 渲染页面骨架
     site.render(document.body);
     
-    //带有page路径的路由
+    // 带有page路径的路由
     router('/:page', function (ctx) {
         //从hash中获取页面名并加载
         site.load(ctx.params.page, true);
     });
     
-    //其他未命中情况
+    // 其他未命中情况
     router('*', function(){
         router.replace('/index');
     });

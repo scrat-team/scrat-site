@@ -1,3 +1,9 @@
+/**
+ * 可以在css的注释中使用 `@require` 来声明依赖关系
+ * @require ../github-markdown/github-markdown.css
+ * @require ../highlight/github.css
+ */
+
 .main {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -34,6 +40,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     top: 0; left: 0;
+
     -webkit-overflow-scrolling: touch;
 
     opacity: 0;
@@ -43,6 +50,12 @@
     -ms-transform: translate3d(0, 100%, 0);
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+
+    -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.3s ease-out;
+    -moz-transition: opacity 0.2s ease-out, -moz-transform 0.3s ease-out;
+    -ms-transition: opacity 0.2s ease-out, -ms-transform 0.3s ease-out;
+    -o-transition: opacity 0.2s ease-out, -o-transform 0.3s ease-out;
+    transition: opacity 0.2s ease-out, transform 0.3s ease-out;
 }
 
 .main-view-inner {
@@ -60,10 +73,11 @@
 }
 
 .transition-all {
-    -moz-transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 @media (max-width: 768px) {
