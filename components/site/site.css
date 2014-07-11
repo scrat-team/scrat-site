@@ -45,17 +45,19 @@
 
     opacity: 0;
 
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 100px, 0);
+    -moz-transform: translate3d(0, 100px, 0);
+    -ms-transform: translate3d(0, 100px, 0);
+    -o-transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
 
-    -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.3s ease-out;
-    -moz-transition: opacity 0.2s ease-out, -moz-transform 0.3s ease-out;
-    -ms-transition: opacity 0.2s ease-out, -ms-transform 0.3s ease-out;
-    -o-transition: opacity 0.2s ease-out, -o-transform 0.3s ease-out;
-    transition: opacity 0.2s ease-out, transform 0.3s ease-out;
+    -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out, -moz-transform 0.3s ease-out;
+    -ms-transition: opacity 0.3s ease-out, -ms-transform 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out, -o-transform 0.3s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+
+    z-index: 10;
 }
 
 .main-view-inner {
@@ -70,6 +72,8 @@
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+
+    z-index: 10000;
 }
 
 .transition-all {
