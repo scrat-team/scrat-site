@@ -1,6 +1,6 @@
 /**
  * 可以在css的注释中使用 `@require` 来声明依赖关系
- * @require ../github-markdown/github-markdown.css
+ * @require ../markdown/markdown.css
  * @require ../highlight/github.css
  */
 
