@@ -1,15 +1,3 @@
-function toggleMenu(e){
-    var clazz = document.body.className;
-    if(/\bshow-menu\b/.test(clazz)){
-        clazz = clazz.replace(/\s*show-menu\b/g, '');
-    } else {
-        clazz += ' show-menu';
-    }
-    document.body.className = clazz;
-    e.stopPropagation();
-    e.preventDefault();
-}
-
 exports.render = function(dom){
     // 使用__inline函数嵌入其他文件、图片。这里用作内嵌模板，
     // scrat已经配置了对handlebars后置的文件进行预编译，因此

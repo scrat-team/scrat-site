@@ -35,7 +35,6 @@
     display: block;
     top: 120px;
     left: 0; right: 0;
-    z-index: 1000;
     background: #f00;
 }
 
@@ -85,6 +84,8 @@
         left: 0;
         bottom: auto;
         margin: 0;
+    }
+    .menu-logo img {
         border: 1px solid #fff;
         box-shadow: none;
         border-radius: 0;

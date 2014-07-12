@@ -1,5 +1,6 @@
 /**
  * 可以在css的注释中使用 `@require` 来声明依赖关系
+ * @require font-awesome
  * @require ../markdown/markdown.css
  * @require ../highlight/github.css
  */
@@ -18,6 +19,7 @@
     bottom: 0;
     width: 150px;
     background: #f2f2f2;
+    z-index: 10000;
 }
 
 .main-content {
@@ -96,7 +98,8 @@
         width: 100%;
         bottom: auto;
         height: 40px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid #fff;
     }
 
     .main-content {

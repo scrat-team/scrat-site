@@ -10,7 +10,7 @@ require.config(__FRAMEWORK_CONFIG__);
  * require.async函数会根据require.config中的依赖关系去加载这些模
  * 块及其依赖的模块（包括对应的css），都完成后才会执行回调
  */
-require.async(['font-awesome', 'es5-safe', 'router', 'site', 'fastclick'], function (fa, es5, router, site, fastclick) {
+require.async(['es5-safe', 'router', 'site', 'fastclick'], function (es5, router, site, fastclick) {
 
     // 使用fastclick
     fastclick(document.body);
