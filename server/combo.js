@@ -8,17 +8,22 @@ module.exports = function (dir) {
     dir = dir || '/public/c';
     var root = app.get('root') + dir,
         logger = app.get('logger') || console,
-        cache = {};
+        lastHash, cache = {};
 
     return function (req, res, next) {
         var i = req.originalUrl.indexOf('??'),
             j = req.originalUrl.indexOf('&'),
-            url, ext, files, contents = [], rs;
+            url, ext, hash, files, contents = [], rs;
 
         if (~i) {
             url = ~j ? req.originalUrl.slice(i + 2, j) : req.originalUrl.slice(i + 2);
             ext = path.extname(url);
             if (ext) res.type(ext.slice(1));
+            if (~j) hash = req.originalUrl.slice(j + 1);
+            if (hash !== lastHash) {
+                lastHash = hash;
+                cache = {};
+            }
 
             res.setHeader('Cache-Control', 'public, max-age=' +
                 (app.get('env') === 'production' ? 60 * 60 * 24 * 365 : 0));
