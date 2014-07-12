@@ -1,6 +1,9 @@
-.menu {
+/*
+ * 在css注释中使用@require语法依赖其他模块样式
+ * @require font-awesome
+ */
 
-}
+.menu {}
 
 .menu-logo {
     height: 120px;

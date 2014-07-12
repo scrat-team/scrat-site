@@ -35,7 +35,7 @@ exports.render = function(dom){
             },
             {
                 icon: 'leaf',
-                title: '开发框架',
+                title: '前端框架',
                 href: '/#!/framework'
             }
         ]
