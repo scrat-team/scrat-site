@@ -7,23 +7,31 @@ var path = require('path'),
 module.exports = function (dir) {
     dir = dir || '/public/c';
     var root = app.get('root') + dir,
-        logger = app.get('logger') || console;
+        logger = app.get('logger') || console,
+        lastHash, cache = {};
 
     return function (req, res, next) {
         var i = req.originalUrl.indexOf('??'),
             j = req.originalUrl.indexOf('&'),
-            url, ext, files, contents = [], rs;
+            url, ext, hash, files, contents = [], rs;
 
         if (~i) {
             url = ~j ? req.originalUrl.slice(i + 2, j) : req.originalUrl.slice(i + 2);
             ext = path.extname(url);
             if (ext) res.type(ext.slice(1));
+            if (~j) hash = req.originalUrl.slice(j + 1);
+            if (hash !== lastHash) {
+                lastHash = hash;
+                cache = {};
+            }
 
             res.setHeader('Cache-Control', 'public, max-age=' +
                 (app.get('env') === 'production' ? 60 * 60 * 24 * 365 : 0));
 
             files = url.split(',');
             files.forEach(function (file) {
+                if (cache[file]) return contents.push(cache[file]);
+
                 var filePath = path.resolve(root, file),
                     content;
                 try {
@@ -31,7 +39,7 @@ module.exports = function (dir) {
                 } catch (e) {
                     logger.error('[combo] cannot read file: ' + filePath + '\n', e.stack);
                 }
-                if (content) contents.push(content);
+                if (content) contents.push(cache[file] = content);
             });
 
             rs = contents.join('\n');
