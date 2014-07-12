@@ -7,8 +7,7 @@ var path = require('path'),
 module.exports = function (dir) {
     dir = dir || '/public/c';
     var root = app.get('root') + dir,
-        logger = app.get('logger') || console,
-        cache = {};
+        logger = app.get('logger') || console;
 
     return function (req, res, next) {
         var i = req.originalUrl.indexOf('??'),
@@ -25,8 +24,6 @@ module.exports = function (dir) {
 
             files = url.split(',');
             files.forEach(function (file) {
-                if (cache[file]) return contents.push(cache[file]);
-
                 var filePath = path.resolve(root, file),
                     content;
                 try {
@@ -34,7 +31,7 @@ module.exports = function (dir) {
                 } catch (e) {
                     logger.error('[combo] cannot read file: ' + filePath + '\n', e.stack);
                 }
-                if (content) contents.push(cache[file] = content);
+                if (content) contents.push(content);
             });
 
             rs = contents.join('\n');
