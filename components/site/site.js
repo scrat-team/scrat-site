@@ -38,11 +38,12 @@ exports.has = function(name){
 
 /**
  * 加载页面，未找到则展示404页面
- * @param {String} name 页面名
+ * @param {Context} context 访问路径信息
  * @param {boolean} preload 是否预加载其他页面
  */
-exports.load = function(name, preload){
+exports.load = function(context, preload){
     // 未注册页面则展示404
+    var name = context.params.page;
     name = this.has(name) ? name : '404';
     var container = document.getElementById('main-views');
     // 异步加载

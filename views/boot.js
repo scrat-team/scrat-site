@@ -6,11 +6,11 @@
 require.config(__FRAMEWORK_CONFIG__);
 
 /*
- * 启动入口，依赖了router、each、ea5-safe、font-awesome几个模块，
+ * 启动入口，依赖了font-awesome、ea5-safe、router、each几个模块，
  * require.async函数会根据require.config中的依赖关系去加载这些模
- * 块及其依赖的模块，都完成后才会执行回调
+ * 块及其依赖的模块（包括对应的css），都完成后才会执行回调
  */
-require.async(['router', 'site', 'fastclick', 'es5-safe', 'font-awesome'], function (router, site, fastclick) {
+require.async(['font-awesome', 'es5-safe', 'router', 'site', 'fastclick'], function (fa, es5, router, site, fastclick) {
 
     // 使用fastclick
     fastclick(document.body);
@@ -24,7 +24,7 @@ require.async(['router', 'site', 'fastclick', 'es5-safe', 'font-awesome'], funct
     // 带有page路径的路由
     router('/:page', function (ctx) {
         //从hash中获取页面名并加载
-        site.load(ctx.params.page, true);
+        site.load(ctx);
     });
     
     // 其他未命中情况

@@ -1,3 +1,3 @@
 exports.getContent = function(){
-    return '404';
+    return __inline('404.handlebars')();
 };
