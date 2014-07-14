@@ -4,6 +4,12 @@ var path = require('path'),
     fs = require('fs'),
     app = require('./index');
 
+// check if the filepath is potentially malicious
+function isMalicious(filepath) {
+    var ext = path.extname(filepath);
+    return ext !== '.css' && ext !== '.js' || filepath.indexOf('..') !== -1;
+}
+
 module.exports = function (dir) {
     dir = dir || '/public/c';
     var root = app.get('root') + dir,
@@ -30,7 +36,8 @@ module.exports = function (dir) {
 
             files = url.split(',');
             files.forEach(function (file) {
-                if (cache[file]) return contents.push(cache[file]);
+                if (cache.hasOwnProperty(file)) return contents.push(cache[file]);
+                if (isMalicious(file)) return logger.error('[combo] malicious file: ' + file);
 
                 var filePath = path.resolve(root, file),
                     content;
