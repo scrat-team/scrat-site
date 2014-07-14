@@ -1,3 +1,21 @@
+exports.views = [
+    {
+        name: 'quick-start',
+        icon: 'compass',
+        label: '快速开始'
+    },
+    {
+        name: 'tool',
+        icon: 'flask',
+        label: '开发工具'
+    },
+    {
+        name: 'framework',
+        icon: 'leaf',
+        label: '前端框架'
+    }
+];
+
 exports.render = function(dom){
     // 使用__inline函数嵌入其他文件、图片。这里用作内嵌模板，
     // scrat已经配置了对handlebars后置的文件进行预编译，因此
@@ -10,26 +28,10 @@ exports.render = function(dom){
         // 将其替换为发布地址，这样工程就不用关心部署问题了
         logo: __uri('logo.png'),
         home: '/#!/index',
-        items: [
-            {
-                icon: 'compass',
-                title: '快速开始',
-                href: '/#!/quick-start'
-            },
-            {
-                icon: 'flask',
-                title: '开发工具',
-                href: '/#!/tool'
-            },
-            {
-                icon: 'leaf',
-                title: '前端框架',
-                href: '/#!/framework'
-            }
-        ]
+        views: exports.views
     };
 
-    data.height = data.items.length * 37;
+    data.height = data.views.length * 37;
 
     // 使用模板+数据得到html
     dom.innerHTML = tpl(data);

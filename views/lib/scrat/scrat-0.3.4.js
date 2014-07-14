@@ -253,7 +253,7 @@
         };
 
         debug('scrat.load', '[' + url + ']');
-        head.insertBefore(node, head.firstChild);
+        head.appendChild(node);
 
         // trigger onload immediately after nonscript node insertion
         if (isCss) {

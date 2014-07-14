@@ -3,13 +3,17 @@
 // require依赖的文件
 var extend = require('extend');
 var each = require('each');
+var menu = require('menu');
 
 // 定义页面和模块对应关系
 var views = {
     '404': 'pages/404',
-    'index': 'pages/index',
-    'quick-start': 'pages/quick-start'
+    'index': 'pages/index'
 };
+
+each(menu.views, function(view){
+    views[view.name] = 'pages/' + view.name;
+});
 
 /**
  * 注册页面
