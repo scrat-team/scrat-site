@@ -6,7 +6,7 @@
         proto = {},
         scrat = create(proto);
 
-    scrat.version = '0.3.4';
+    scrat.version = '0.3.5';
     scrat.options = {
         prefix: '__SCRAT__',
         cache: false,
@@ -58,13 +58,13 @@
         if (/\bscrat=([\w,]+)\b/.test(location.search)) {
             each(RegExp.$1.split(','), function (o) {
                 switch (o) {
-                case 'nocache':
-                    scrat.clean();
-                    options.cache = false;
-                    break;
-                case 'nocombo':
-                    options.combo = false;
-                    break;
+                    case 'nocache':
+                        scrat.clean();
+                        options.cache = false;
+                        break;
+                    case 'nocombo':
+                        options.combo = false;
+                        break;
                 }
             });
         }
@@ -85,7 +85,7 @@
             each(names, function (id) {
                 args.push(require(id));
             });
-            onload && onload.apply(scrat, args);
+            if (onload) onload.apply(scrat, args);
             debug('scrat.async', '[' + names.join(', ') + '] callback called');
         });
         reactor.run();
@@ -150,7 +150,7 @@
             raw = localStorage.getItem(options.prefix + id);
             if (raw) {
                 if (type === 'js') {
-                    window['eval'].call(window, 'define("' + id + '",' + raw + ')');
+                    global['eval'].call(global, 'define("' + id + '",' + raw + ')');
                 } else if (type === 'css') {
                     scrat.defineCSS(id, raw, false);
                 }
@@ -192,12 +192,12 @@
 
         while (aliasMap[name] && name !== aliasMap[name]) {
             switch (type(aliasMap[name])) {
-            case 'function':
-                name = aliasMap[name](name);
-                break;
-            case 'string':
-                name = aliasMap[name];
-                break;
+                case 'function':
+                    name = aliasMap[name](name);
+                    break;
+                case 'string':
+                    name = aliasMap[name];
+                    break;
             }
         }
         return name;
@@ -206,7 +206,7 @@
     /**
      * Load any types of resources from specified url
      * @param {string} url
-     * @param {function|object} [onload|options]
+     * @param {function|object} options
      */
     proto.load = function (url, options) {
         if (type(options) === 'function') options = {onload: options};
@@ -401,14 +401,14 @@
         }
 
         switch (type(url)) {
-        case 'string':
-            url = url.replace('%s', ids.join(','));
-            break;
-        case 'function':
-            url = url(ids);
-            break;
-        default:
-            url = ids.join(',');
+            case 'string':
+                url = url.replace('%s', ids.join(','));
+                break;
+            case 'function':
+                url = url(ids);
+                break;
+            default:
+                url = ids.join(',');
         }
 
         return url + (~url.indexOf('?') ? '&' : '?') + options.hash;
@@ -417,7 +417,7 @@
     /**
      * Require another module in factory
      * @param {string} name
-     * @returns {*} exports
+     * @returns {*} module.exports
      */
     function require(name) {
         var id = scrat.alias(name),
@@ -537,4 +537,5 @@
     global.require = scrat;
     global.define = scrat.define;
     global.defineCSS = scrat.defineCSS;
+    if (global.module && global.module.exports) global.module.exports = scrat;
 })(this);
