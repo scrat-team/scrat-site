@@ -48,6 +48,18 @@
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #fff;
     background: #f2f2f2;
+
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.menu-list a.active {
+    color: #2c3e50;
+    background: #ddd;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .menu-list a:last-child {
@@ -55,7 +67,6 @@
 }
 
 .menu-list a i {
-    color: #46b39e;
     padding-right: 5px;
 }
 

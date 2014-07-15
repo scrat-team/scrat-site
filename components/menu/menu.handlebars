@@ -7,7 +7,7 @@
     <i id="menu-switch" class="fa fa-bars menu-switch"></i>
     <nav id="menu-list" class="menu-list transition-all" style="height:0">
         {{#each views}}
-            <a href="/#!/{{name}}"><i class="fa fa-{{icon}}"></i> {{label}}</a>
+            <a href="/#!/{{name}}" data-page="{{name}}"><i class="fa fa-{{icon}}"></i> {{label}}</a>
         {{/each}}
     </nav>
 </div>

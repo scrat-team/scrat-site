@@ -5,7 +5,7 @@
  * @require ../highlight/github.css
  */
 
-.main {
+.site {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -13,7 +13,7 @@
     bottom: 5%; right: 10%;
 }
 
-.main-menu {
+.site-menu {
     position: absolute;
     top: 0; left: 0;
     bottom: 0;
@@ -22,20 +22,20 @@
     z-index: 10000;
 }
 
-.main-content {
+.site-content {
     position: absolute;
     top: 0; left: 150px;
     bottom: 0; right: 0;
 }
 
-.main-views {
+.site-views {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
 
-.main-view {
+.site-view {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -63,11 +63,11 @@
     z-index: 10;
 }
 
-.main-view-inner {
+.site-view-inner {
     padding: 3%;
 }
 
-.main-view.active {
+.site-view.active {
     opacity: 1;
 
     -webkit-transform: translate3d(0, 0, 0);
@@ -89,12 +89,12 @@
 
 @media (max-width: 768px) {
 
-    .main {
+    .site {
         top: 0; left: 0;
         bottom: 0; right: 0;
     }
 
-    .main-menu {
+    .site-menu {
         width: 100%;
         bottom: auto;
         height: 40px;
@@ -102,7 +102,7 @@
         border-bottom: 1px solid #fff;
     }
 
-    .main-content {
+    .site-content {
         left: 0;
         top: 40px;
     }

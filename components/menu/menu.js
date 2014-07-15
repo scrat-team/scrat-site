@@ -1,7 +1,21 @@
 
+var each = require('each');
+
 // 在require函数中可以使用相对路径引用文件
 // 注意：不可以省略后缀名
 exports.views = require('./views.js');
+
+exports.active = function(name){
+    var items = document.querySelectorAll('#menu-list a[data-page]');
+    each(items, function(item){
+        var page = item.getAttribute('data-page');
+        if(page === name){
+            item.className = 'active';
+        } else {
+            item.className = '';
+        }
+    });
+};
 
 /**
  * 渲染menu模块

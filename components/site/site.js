@@ -49,7 +49,7 @@ exports.load = function(context, preload){
     // 未注册页面则展示404
     var name = context.params.page;
     name = this.has(name) ? name : '404';
-    var container = document.getElementById('main-views');
+    var container = document.getElementById('site-views');
     // 异步加载
     require.async(views[name], function(page){
         var pages = container.querySelectorAll('[data-page]');
@@ -59,7 +59,7 @@ exports.load = function(context, preload){
             if(p === name){
                 var content;
                 if(typeof page.getMarkdown === 'function'){
-                    content = '<div class="main-view-inner markdown-body">' + page.getMarkdown() + '</div>';
+                    content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
                 } else {
                     content = page.getHTML();
                 }
@@ -69,6 +69,7 @@ exports.load = function(context, preload){
                 dom.className = clazz;
             }
         });
+        menu.active(name);
 
         // 如果开启预加载，则在完成当前页面加载之后去异步加载其他页面
         if(preload){
@@ -107,6 +108,5 @@ exports.render = function(dom){
     });
 
     // 加载菜单模块
-    var menu = require('menu');
-    menu.render(document.getElementById('main-menu'));
+    menu.render(document.getElementById('site-menu'));
 };
