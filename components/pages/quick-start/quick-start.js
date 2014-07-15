@@ -1,5 +1,5 @@
 'use strict';
 
-exports.getContent = function () {
+exports.getMarkdown = function () {
     return __inline('quick-start.md');
 };
