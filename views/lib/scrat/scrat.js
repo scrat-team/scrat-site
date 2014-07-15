@@ -73,7 +73,7 @@
 
     /**
      * Require modules asynchronously with a callback
-     * @param {string|array} names
+     * @param {string|Array} names
      * @param {function} onload
      */
     proto.async = function (names, onload) {

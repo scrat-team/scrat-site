@@ -12,7 +12,7 @@ var views = {
 };
 
 each(menu.views, function(view){
-    views[view.name] = 'pages/' + view.name;
+    views[view.name] = view.module || ('pages/' + view.name);
 });
 
 /**
