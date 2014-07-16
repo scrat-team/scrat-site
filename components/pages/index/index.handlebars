@@ -1,0 +1,40 @@
+<div class="page-index">
+    <div class="page-index-banner">
+        <div class="page-index-banner-title">
+            <h1>SCRAT</h1>
+            <h3>webapp模块化开发体系</h3>
+            <i class="fa fa-paper-plane"></i>
+        </div>
+        <div class="page-index-banner-pad">
+            <div class="page-index-banner-pad-speaker"></div>
+            <div class="page-index-banner-pad-screen">
+                <div class="page-index-banner-pad-screen-mod-1"></div>
+                <div class="page-index-banner-pad-screen-mod-2">
+                    <i class="fa fa-picture-o"></i>
+                </div>
+                <div class="page-index-banner-pad-screen-mod-3">
+                    <i class="fa fa-gear"></i>
+                </div>
+                <div class="page-index-banner-pad-screen-mod-4">
+                    <i class="fa fa-th-large"></i>
+                </div>
+                <div class="page-index-banner-pad-screen-mod-5">
+                    <i class="fa fa-th-list"></i>
+                </div>
+                <div class="page-index-banner-pad-screen-mod-6"></div>
+            </div>
+            <div class="page-index-banner-pad-status">
+                <i class="fa fa-signal"></i>
+                <i class="fa fa-location-arrow pull-right"></i>
+                <i class="fa fa-headphones pull-right"></i>
+                <i class="fa fa-clock-o pull-right"></i>
+            </div>
+            <div class="page-index-banner-pad-home"></div>
+        </div>
+    </div>
+    <ul class="page-index-list transition-all">
+        {{#each this}}
+        <li><a href="{{href}}"><i class="fa fa-{{icon}}"></i><span>{{title}}</span></a></li>
+        {{/each}}
+    </ul>
+</div>

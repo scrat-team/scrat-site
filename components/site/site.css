@@ -8,9 +8,10 @@
 .site {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 5%; left: 10%;
-    bottom: 5%; right: 10%;
+    position: relative;
+    margin: 2% auto;
+    height: 91%;
+    max-width: 810px;
 }
 
 .site-menu {
@@ -90,8 +91,8 @@
 @media (max-width: 768px) {
 
     .site {
-        top: 0; left: 0;
-        bottom: 0; right: 0;
+        margin: 0;
+        height: 100%;
     }
 
     .site-menu {
