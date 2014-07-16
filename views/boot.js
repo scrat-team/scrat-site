@@ -15,9 +15,6 @@ require.async(['es5-safe', 'router', 'site', 'fastclick'], function (es5, router
     // 使用fastclick
     fastclick(document.body);
 
-    // 全屏
-    setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-
     // 渲染页面骨架
     site.render(document.body);
     

@@ -249,6 +249,7 @@ div.page-index-banner-pad-screen-mod-6 {
 }
 .page-index-list li {
     float: left;
+    margin: 10px;
 }
 .page-index-list a {
     display: block;
@@ -259,8 +260,8 @@ div.page-index-banner-pad-screen-mod-6 {
     padding: 5px 10px;
     border-radius: 10px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    margin: 10px;
 }
+
 .page-index-list li a .fa {
     display: block;
     font-size: 57px;
@@ -273,14 +274,26 @@ div.page-index-banner-pad-screen-mod-6 {
     display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .page-index-list {
-        position: relative;
+        position: static;
         left: 0; top: 0;
+        width: 305px;
+        margin: 0 auto 10px;
+    }
+    .page-index-list li {
+        margin: 5px;
+    }
+    .page-index-list li a .fa {
+        font-size: 52px;
+        width: 65px;
+    }
+    .page-index-list li a span {
+        font-size: 12px;
     }
     .page-index-banner {
         width: 220px;
-        position: relative;
+        position: static;
         margin: 20px auto;
         top: 0; left: 0;
     }

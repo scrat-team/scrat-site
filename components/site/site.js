@@ -48,6 +48,7 @@ exports.has = function(name){
 exports.load = function(context, preload){
     // 未注册页面则展示404
     var name = context.params.page;
+    var offset = context.queries.offset || 0;
     name = this.has(name) ? name : '404';
     var container = document.getElementById('site-views');
     // 异步加载
@@ -65,6 +66,7 @@ exports.load = function(context, preload){
                 }
                 dom.innerHTML = content;
                 dom.className = clazz + ' active';
+                dom.scrollTop = offset;
             } else {
                 dom.className = clazz;
             }

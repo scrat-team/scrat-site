@@ -42,8 +42,10 @@ exports.render = function(dom){
     dom.innerHTML = tpl(data);
 
     var list = document.getElementById('menu-list');
+    var isSupportTouch = !!('ontouchend' in document);
+    var eventType = isSupportTouch ? 'touchend' : 'click';
     // 绑定事件
-    document.getElementById('menu-switch').addEventListener('click', function(e){
+    document.getElementById('menu-switch').addEventListener(eventType, function(e){
         if(parseInt(list.style.height) == 0){
             list.style.height = data.height + 'px';
         } else {
@@ -52,7 +54,7 @@ exports.render = function(dom){
         e.stopPropagation();
         e.preventDefault();
     }, false);
-    document.body.addEventListener('click', function(){
+    document.body.addEventListener(eventType, function(){
         list.style.height = 0;
     }, false);
 };

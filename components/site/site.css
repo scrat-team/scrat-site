@@ -5,6 +5,15 @@
  * @require ../highlight/github.css
  */
 
+.clearfix:after {
+    content: ' ';
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+}
+
 .site {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -12,6 +21,7 @@
     margin: 2% auto;
     height: 91%;
     max-width: 810px;
+    min-width: 320px;
 }
 
 .site-menu {
@@ -45,8 +55,6 @@
     top: 0; left: 0;
     background: #fff;
 
-    -webkit-overflow-scrolling: touch;
-
     opacity: 0;
 
     -webkit-transform: translate3d(0, 100px, 0);
@@ -77,6 +85,8 @@
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
+    -webkit-overflow-scrolling: touch;
+
     z-index: 100;
 }
 
@@ -88,7 +98,7 @@
     transition: all 0.2s ease-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
 
     .site {
         margin: 0;

@@ -84,7 +84,7 @@
     padding: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .menu-logo {
         height: 40px;
     }
