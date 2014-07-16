@@ -14,13 +14,18 @@ module.exports = {
                 href: '/#!/index'
             },
             {
+                title: '项目脚手架',
+                icon: 'wrench',
+                href: '/#!/index'
+            },
+            {
                 title: '按需加载',
-                icon: 'archive',
+                icon: 'crosshairs',
                 href: '/#!/index'
             },
             {
                 title: '请求合并',
-                icon: 'sitemap',
+                icon: 'flash',
                 href: '/#!/index'
             },
             {
@@ -29,8 +34,23 @@ module.exports = {
                 href: '/#!/index'
             },
             {
-                title: '组件仓库',
-                icon: 'github',
+                title: '代码压缩',
+                icon: 'leaf',
+                href: '/#!/index'
+            },
+            {
+                title: '代码校验',
+                icon: 'search',
+                href: '/#!/index'
+            },
+            {
+                title: 'CSS雪碧图',
+                icon: 'th',
+                href: '/#!/index'
+            },
+            {
+                title: '本地调试',
+                icon: 'bug',
                 href: '/#!/index'
             },
             {
@@ -44,38 +64,18 @@ module.exports = {
                 href: '/#!/index'
             },
             {
-                title: '性能优化',
-                icon: 'leaf',
+                title: '资源内嵌',
+                icon: 'archive',
                 href: '/#!/index'
             },
             {
-                title: '代码校验',
-                icon: 'bug',
+                title: '多语言编译',
+                icon: 'code',
                 href: '/#!/index'
             },
             {
-                title: 'CSS雪碧图',
-                icon: 'th',
-                href: '/#!/index'
-            },
-            {
-                title: '工具扩展',
-                icon: 'puzzle-piece',
-                href: '/#!/index'
-            },
-            {
-                title: '代码校验',
-                icon: 'bug',
-                href: '/#!/index'
-            },
-            {
-                title: 'CSS雪碧图',
-                icon: 'th',
-                href: '/#!/index'
-            },
-            {
-                title: '工具扩展',
-                icon: 'puzzle-piece',
+                title: '组件仓库',
+                icon: 'github',
                 href: '/#!/index'
             }
         ];

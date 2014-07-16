@@ -73,6 +73,7 @@ exports.load = function(context, preload){
                     }
                 }
             } else {
+                dom.innerHTML = '';
                 dom.className = clazz;
             }
         });

@@ -19,6 +19,7 @@
     color: #e67e22;
     font-family: arial, sans-serif;
     text-shadow: 0 3px 1px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
 .page-index-banner-title h3 {
@@ -266,7 +267,7 @@ div.page-index-banner-pad-screen-mod-6 {
 
 .page-index-list li a .fa {
     display: block;
-    font-size: 55px;
+    font-size: 50px;
     width: 72px;
     height: 57px;
     line-height: 57px;
@@ -285,7 +286,7 @@ div.page-index-banner-pad-screen-mod-6 {
 }
 
 .page-index-list li a:hover .fa {
-    font-size: 57px;
+    font-size: 52px;
 }
 
 @media (max-width: 820px) {
