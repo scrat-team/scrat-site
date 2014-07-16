@@ -48,7 +48,7 @@ exports.has = function(name){
 exports.load = function(context, preload){
     // 未注册页面则展示404
     var name = context.params.page;
-    var offset = context.queries.offset || 0;
+    var offset = context.queries.offset;
     name = this.has(name) ? name : '404';
     var container = document.getElementById('site-views');
     // 异步加载
@@ -66,7 +66,12 @@ exports.load = function(context, preload){
                 }
                 dom.innerHTML = content;
                 dom.className = clazz + ' active';
-                dom.scrollTop = offset;
+                if(typeof offset !== 'undefined'){
+                    var anchor = dom.querySelectorAll('h2');
+                    if(anchor && anchor[offset]){
+                        anchor[offset].scrollIntoView();
+                    }
+                }
             } else {
                 dom.className = clazz;
             }

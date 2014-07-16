@@ -9,8 +9,18 @@ module.exports = {
                 href: '/#!/index'
             },
             {
+                title: '按版本发布',
+                icon: 'code-fork',
+                href: '/#!/index'
+            },
+            {
                 title: '按需加载',
                 icon: 'archive',
+                href: '/#!/index'
+            },
+            {
+                title: '请求合并',
+                icon: 'sitemap',
                 href: '/#!/index'
             },
             {
@@ -36,6 +46,21 @@ module.exports = {
             {
                 title: '性能优化',
                 icon: 'leaf',
+                href: '/#!/index'
+            },
+            {
+                title: '代码校验',
+                icon: 'bug',
+                href: '/#!/index'
+            },
+            {
+                title: 'CSS雪碧图',
+                icon: 'th',
+                href: '/#!/index'
+            },
+            {
+                title: '工具扩展',
+                icon: 'puzzle-piece',
                 href: '/#!/index'
             },
             {
