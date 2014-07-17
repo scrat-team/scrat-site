@@ -49,7 +49,7 @@ module.exports = {
                 href: '/#!/index'
             },
             {
-                title: '本地调试',
+                title: '本地服务器',
                 icon: 'bug',
                 href: '/#!/index'
             },
