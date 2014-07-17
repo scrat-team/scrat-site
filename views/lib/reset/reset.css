@@ -31,9 +31,6 @@ body {
     line-height: 1;
     color: #34495e;
 }
-ol, ul {
-    list-style: none;
-}
 blockquote, q {
     quotes: none;
 }

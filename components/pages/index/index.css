@@ -248,6 +248,7 @@ div.page-index-banner-pad-screen-mod-6 {
     left: 290px;
     top: 10px;
     padding-bottom: 0;
+    list-style: none;
 }
 .page-index-list li {
     float: left;
