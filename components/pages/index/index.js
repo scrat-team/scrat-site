@@ -50,7 +50,7 @@ module.exports = {
             },
             {
                 title: '本地服务器',
-                icon: 'bug',
+                icon: 'rocket',
                 href: '/#!/index'
             },
             {
