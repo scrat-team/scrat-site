@@ -24,7 +24,7 @@ git clone http://git.io/kcqNXQ
 cd scrat-site
 ```
 
-目录结构一览
+开发目录结构一览
 
 ```bash
 scrat-site
@@ -47,7 +47,7 @@ scrat release
 
 ![scrat release](release.gif)
 
-工具构建之后，会把构建好的代码发布到调试目录下（执行``scrat server open``命令可以查看该目录），不会污染源码目录。release命令输出的点点点代表参与构建的源码文件，每个点代表一个文件，颜色暗的点表示该文件构建速度较快（小于10ms），颜色亮的点表示该文件构建速度较慢(小于20ms)
+工具构建之后，会把构建好的代码发布到调试目录下（执行``scrat server open``命令可以查看该目录），不会污染源码目录。release命令输出的点点点代表参与构建的源码文件，每个点代表一个文件，颜色暗的点表示该文件构建速度较快（小于10ms），颜色亮的点表示该文件构建速度较慢（小于100ms）
 
 ## 4. 浏览示例项目
 
@@ -61,13 +61,66 @@ scrat server start
 
 > http://127.0.0.1:5000
 
-## 5. 发布示例项目
+## 5. 文件监听+自动刷新
 
 ```bash
-scrat release -lompd ../output
+scrat release -wL
 ```
 
-该命令会对项目进行校验、压缩、加md5戳、请求合并、将结果发布到 ``../output``  目录中，output目录下的文件即可部署上线了。有关release命令的更多用法，请继续阅读[这里](/#!/todo)
+保持scrat server start启动的命令行终端不关闭，打开新的命令行终端，执行scrat release -wL命令，即可进入文件监听+浏览器自动刷新模式。修改项目中的代码并保存，浏览器将自动刷新页面，以提高开发效率。
+
+> -wL是 --watch(监听) 和 --live(刷新) 两个参数的简写组合，更多参数及使用方式请查看[这里](/#!/todo)
+
+## 6. 发布示例项目
+
+```bash
+scrat release -opd ../output
+```
+
+该命令会对项目进行压缩、请求合并与css雪碧图处理，并将结果发布到 ``../output``  目录中，这个目录下的文件即可部署上线了
+
+> release命令始终会有一个发布路径，该路径的缺省值为server的调试目录，省略-d参数scrat会将构建后的代码发布到默认的调试目录，否则会发布到-d参数制定的目录下。
+
+发布后的目录结构为：
+
+```bash
+../output
+  ├─ public
+  │  ├─ c (模块化资源部署目录)
+  │  │  ├─ ftlabs-fastclick
+  │  │  │  └── 1.0.2
+  │  │  ├─ scrat-site
+  │  │  │  └── 0.1.0
+  │  │  ├─ scrat-team-each
+  │  │  │  └── 0.1.0
+  │  │  ├─ scrat-team-es5-safe
+  │  │  │  └── 0.1.0
+  │  │  ├─ scrat-team-extend
+  │  │  │  └── 0.1.0
+  │  │  ├─ scrat-team-font-awesome
+  │  │  │  └── 4.1.0
+  │  │  ├─ scrat-team-router
+  │  │  │  └── 0.1.0
+  │  │  └─ scrat-team-type
+  │  │     └── 0.1.0
+  │  └─ scrat-site (非模块化资源部署目录)
+  │     └─ 0.1.0
+  │        ├── boot.js
+  │        ├── index.html
+  │        └── lib
+  ├─ server (nodejs服务器部署目录)
+  └─ package.json (nodejs依赖描述)
+```
+
+scrat会按版本发布项目，发布后的目录路径中会出现项目版本号，采用按版本的非覆盖式发布可以实现静态资源缓存更新、灰度发布、快速回滚、保留历史版本等功能。
+
+当然，本地调试服务器中也能预览优化后的效果，只要将代码release到默认的调试目录下，然后刷新浏览器查看即可：
+
+```bash
+scrat release -op
+```
+
+查看浏览器的network信息可以看到所有js、css、图片均被压缩，静态资源请求也已 [combo](/#!/todo) 形式合并，css雪碧图也完成处理了。
 
 --------
 
@@ -80,4 +133,4 @@ scrat release -lompd ../output
 * [文件监听与自动刷新](/#!/todo)
 * [各种构建参数搭配](/#!/todo)
 * [部署目录结构说明](/#!/todo)
-* [nodejs服务器使用与开发](/#!/todo)
+* [调试服务器使用技巧](/#!/todo)
