@@ -44,20 +44,24 @@ exports.render = function(dom){
     // 使用模板+数据得到html
     dom.innerHTML = tpl(data);
 
-    var list = document.getElementById('menu-list');
     var isSupportTouch = !!('ontouchend' in document);
     var eventType = isSupportTouch ? 'touchend' : 'click';
     // 绑定事件
     document.getElementById('menu-switch').addEventListener(eventType, function(e){
-        if(parseInt(list.style.height) == 0){
-            list.style.height = data.height + 'px';
-        } else {
-            list.style.height = 0;
-        }
         e.stopPropagation();
         e.preventDefault();
+        var clazz = ' ' + document.body.className;
+        if(/\sshow-menu-list\b/.test(clazz)){
+            clazz = clazz.replace(/\s+show-menu-list/, '');
+        } else {
+            clazz = clazz + ' show-menu-list';
+        }
+        document.body.className = clazz.trim();
     }, false);
     document.body.addEventListener(eventType, function(){
-        list.style.height = 0;
+        var clazz = ' ' + document.body.className;
+        if(/\sshow-menu-list\b/.test(clazz)){
+            document.body.className = clazz.replace(/\s+show-menu-list/, '').trim();
+        }
     }, false);
 };

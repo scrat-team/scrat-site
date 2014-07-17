@@ -30,5 +30,10 @@ module.exports = [
         name: 'settings',
         icon: 'gear',
         label: '工具配置'
+    },
+    {
+        name: 'faq',
+        icon: 'lightbulb-o',
+        label: '常见问题'
     }
 ];

@@ -9,6 +9,7 @@
     height: 120px;
     position: relative;
     background: #1bbc9b;
+    z-index: 100000;
 }
 
 .menu-logo-img {
@@ -35,7 +36,6 @@
     display: block;
     top: 120px;
     left: 0; right: 0;
-    background: #f00;
 }
 
 .menu-list a {
@@ -50,11 +50,8 @@
     background: #f2f2f2;
     vertical-align: middle;
 
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .menu-list a.active {
@@ -84,6 +81,7 @@
     display: none;
     background: rgba(0,0,0, 0);
     padding: 10px;
+    z-index: 100001;
 }
 
 @media (max-width: 820px) {
@@ -108,8 +106,13 @@
     }
     .menu-list {
         top: 40px;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0,0,0, 0.3);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    .show-menu-list .menu-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
     .menu-switch {
         display: block;
