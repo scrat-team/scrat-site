@@ -6,6 +6,9 @@ var each = require('each');
 var menu = require('menu');
 var footer = require('footer');
 
+// 内部变量
+var lastView;
+
 // 定义页面和模块对应关系
 var views = {
     '404': 'pages/404',
@@ -74,7 +77,9 @@ exports.load = function(context, preload){
                     }
                 }
             } else {
-                dom.innerHTML = '';
+                if(p !== lastView){
+                    dom.innerHTML = '';
+                }
                 dom.className = clazz;
             }
         });
@@ -92,6 +97,7 @@ exports.load = function(context, preload){
             // 发起异步请求获取，不阻塞当前页面
             require.async(others);
         }
+        lastView = name;
     });
 };
 

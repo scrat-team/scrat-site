@@ -66,31 +66,22 @@
     opacity: 0;
 
     -webkit-transform: translate3d(0, 100px, 0);
-    -moz-transform: translate3d(0, 100px, 0);
-    -ms-transform: translate3d(0, 100px, 0);
-    -o-transform: translate3d(0, 100px, 0);
     transform: translate3d(0, 100px, 0);
 
     -webkit-transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    -moz-transition: opacity 0.3s ease-out, -moz-transform 0.3s ease-out;
-    -ms-transition: opacity 0.3s ease-out, -ms-transform 0.3s ease-out;
-    -o-transition: opacity 0.3s ease-out, -o-transform 0.3s ease-out;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 
     z-index: 10;
 }
 
 .site-view-inner {
-    padding: 3% 3% 7%;
+    padding: 3%;
 }
 
 .site-view.active {
     opacity: 1;
 
     -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
     -webkit-overflow-scrolling: touch;
@@ -100,9 +91,6 @@
 
 .transition-all {
     -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
 
@@ -129,5 +117,9 @@
     .site-footer {
         bottom: -5px;
         right: 0;
+    }
+
+    .site-view-inner {
+        padding: 3% 3% 7%;
     }
 }
