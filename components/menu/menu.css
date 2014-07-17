@@ -11,7 +11,7 @@
     background: #1bbc9b;
 }
 
-.menu-logo .menu-logo-img {
+.menu-logo-img {
     display: block;
     width: 80px;
     height: 80px;
@@ -91,7 +91,7 @@
     .menu-logo {
         height: 40px;
     }
-    .menu-logo a {
+    .menu-logo-img {
         width: 38px;
         height: 38px;
         top: 0;
@@ -99,7 +99,7 @@
         bottom: auto;
         margin: 0;
     }
-    .menu-logo img {
+    .menu-logo-img img {
         border: 1px solid #fff;
         box-shadow: none;
         border-radius: 0;
