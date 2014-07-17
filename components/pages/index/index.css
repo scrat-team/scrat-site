@@ -247,6 +247,7 @@ div.page-index-banner-pad-screen-mod-6 {
     position: absolute;
     left: 290px;
     top: 10px;
+    padding-bottom: 0;
 }
 .page-index-list li {
     float: left;
@@ -294,7 +295,8 @@ div.page-index-banner-pad-screen-mod-6 {
         position: static;
         left: 0; top: 0;
         width: 305px;
-        margin: 0 auto 10px;
+        margin: 0 auto;
+        padding-bottom: 20px;
     }
     .page-index-list li {
         margin: 5px;

@@ -4,6 +4,7 @@
 var extend = require('extend');
 var each = require('each');
 var menu = require('menu');
+var footer = require('footer');
 
 // 定义页面和模块对应关系
 var views = {
@@ -115,6 +116,8 @@ exports.render = function(dom){
         views: views
     });
 
-    // 加载菜单模块
+    // 渲染menu模块
     menu.render(document.getElementById('site-menu'));
+    // 渲染footer模块
+    footer.render(document.getElementById('site-footer'));
 };

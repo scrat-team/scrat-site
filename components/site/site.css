@@ -39,6 +39,14 @@
     bottom: 0; right: 0;
 }
 
+.site-footer {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    height: 20px;
+    z-index: 100000;
+}
+
 .site-views {
     width: 100%;
     height: 100%;
@@ -73,7 +81,7 @@
 }
 
 .site-view-inner {
-    padding: 3%;
+    padding: 7% 3%;
 }
 
 .site-view.active {
@@ -116,5 +124,10 @@
     .site-content {
         left: 0;
         top: 40px;
+    }
+
+    .site-footer {
+        bottom: -5px;
+        right: 0;
     }
 }
