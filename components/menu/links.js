@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = [
     {
         href: 'https://github.com/scrat-team/scrat',

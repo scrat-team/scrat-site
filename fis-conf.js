@@ -23,6 +23,7 @@ fis.config.set('settings.lint.jshint', {
         'component_modules/**'
     ],
     // 其他配置项请直接参阅jshint官网说明
+    predef: [ 'define', 'Handlebars', '__FRAMEWORK_CONFIG__' ],
     bitwise: true,
     camelcase: true,
     eqeqeq: true,
@@ -33,9 +34,7 @@ fis.config.set('settings.lint.jshint', {
     noarg: true,
     noempty: true,
     nonew: true,
-    quotmark: 'single',
     undef: true,
-    unused: true,
     strict: true,
     boss: true,
     trailing: true,

@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = [
     {
         name: 'quick-start',
@@ -18,6 +20,11 @@ module.exports = [
         name: 'components',
         icon: 'puzzle-piece',
         label: '组件生态'
+    },
+    {
+        name: 'command',
+        icon: 'terminal',
+        label: '工具命令'
     },
     {
         name: 'settings',

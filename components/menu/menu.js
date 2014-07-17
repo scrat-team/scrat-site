@@ -1,3 +1,4 @@
+'use strict';
 
 var each = require('each');
 
@@ -38,7 +39,7 @@ exports.render = function(dom){
         links: exports.links
     };
 
-    data.height = data.views.length * 37;
+    data.height = (data.views.length + data.links.length) * 37;
 
     // 使用模板+数据得到html
     dom.innerHTML = tpl(data);
