@@ -32,8 +32,8 @@ module.exports = [
         label: '工具配置'
     },
     {
-        name: 'faq',
+        name: 'practice',
         icon: 'lightbulb-o',
-        label: '常见问题'
+        label: '最佳实践'
     }
 ];
