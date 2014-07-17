@@ -4,7 +4,7 @@
 npm install -g scrat
 ```
 
-安装完成后执行 ``scrat -v`` 查看一下工具版本：
+安装完成后执行 ``scrat -v`` 查看工具版本：
 
 ![scrat -v](version.gif)
 
@@ -12,7 +12,7 @@ npm install -g scrat
 
 ## 2. 下载示例项目
 
-使用 [git](http://www.git-scm.com/) clone [官网项目](https://github.com/scrat-team/scrat-site/)（也可以直接[下载](https://github.com/scrat-team/scrat-site/archive/master.zip)）
+使用 [git](http://www.git-scm.com/) clone [官网项目](https://github.com/scrat-team/scrat-site/)（或直接 [下载](https://github.com/scrat-team/scrat-site/archive/master.zip) 解压）
 
 ```bash
 git clone http://git.io/kcqNXQ
@@ -28,15 +28,15 @@ cd scrat-site
 
 ```bash
 scrat-site
-  |-- component_modules(安装的第三方组件)
-  |-- components       (模块化资源目录)
-  |-- server           (nodejs服务器)
-  |-- views            (非模块化资源目录)
-  |-- component.json   (组件依赖描述)
-  |-- package.json     (nodejs依赖描述)
-  |-- fis-conf.js      (构建工具配置文件)
-  |-- LICENSE
-  `-- README.md
+  |- component_modules (安装的第三方组件)
+  |- components        (模块化资源目录)
+  |- server            (nodejs服务器)
+  |- views             (非模块化资源目录)
+  |- component.json    (组件依赖描述)
+  |- package.json      (nodejs依赖描述)
+  |- fis-conf.js       (构建工具配置文件)
+  |- LICENSE
+  `- README.md
 ```
 
 ## 3. 构建示例项目
