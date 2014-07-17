@@ -11,7 +11,7 @@
     background: #1bbc9b;
 }
 
-.menu-logo > a {
+.menu-logo .menu-logo-img {
     display: block;
     width: 80px;
     height: 80px;
@@ -22,7 +22,7 @@
     margin-top: -45px;
 }
 
-.menu-logo img {
+.menu-logo-img img {
     width: 100%;
     height: 100%;
     border: 5px solid #ccc;
@@ -48,6 +48,7 @@
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #fff;
     background: #f2f2f2;
+    vertical-align: middle;
 
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -67,7 +68,9 @@
 }
 
 .menu-list a i {
-    padding-right: 5px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
 }
 
 .menu-switch {

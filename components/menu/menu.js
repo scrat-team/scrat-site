@@ -4,6 +4,7 @@ var each = require('each');
 // 在require函数中可以使用相对路径引用文件
 // 注意：不可以省略后缀名
 exports.views = require('./views.js');
+exports.links = require('./links.js');
 
 exports.active = function(name){
     var items = document.querySelectorAll('#menu-list a[data-page]');
@@ -33,7 +34,8 @@ exports.render = function(dom){
         // 将其替换为发布地址，这样工程就不用关心部署相关问题了
         logo: __uri('logo.png'),
         home: '/#!/index',
-        views: exports.views
+        views: exports.views,
+        links: exports.links
     };
 
     data.height = data.views.length * 37;

@@ -5,13 +5,23 @@ module.exports = [
         label: '快速开始'
     },
     {
-        name: 'tool',
-        icon: 'flask',
-        label: '开发工具'
+        name: 'modular',
+        icon: 'cube',
+        label: '模块开发'
     },
     {
         name: 'framework',
-        icon: 'leaf',
+        icon: 'book',
         label: '前端框架'
+    },
+    {
+        name: 'components',
+        icon: 'puzzle-piece',
+        label: '组件生态'
+    },
+    {
+        name: 'settings',
+        icon: 'gear',
+        label: '工具配置'
     }
 ];

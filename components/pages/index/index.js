@@ -14,8 +14,8 @@ module.exports = {
                 href: '/#!/index'
             },
             {
-                title: '项目脚手架',
-                icon: 'wrench',
+                title: '组件生态',
+                icon: 'github',
                 href: '/#!/index'
             },
             {
@@ -74,8 +74,8 @@ module.exports = {
                 href: '/#!/index'
             },
             {
-                title: '组件仓库',
-                icon: 'github',
+                title: '项目脚手架',
+                icon: 'wrench',
                 href: '/#!/index'
             }
         ];

@@ -1,13 +1,16 @@
 <div class="menu">
     <div class="menu-logo transition-all">
-        <a href="{{home}}" title="scrat——冰河世纪小松鼠">
+        <a class="menu-logo-img" href="{{home}}" title="scrat——冰河世纪小松鼠">
             <img src="{{logo}}" alt="logo" class="transition-all"/>
         </a>
     </div>
     <i id="menu-switch" class="fa fa-bars menu-switch"></i>
     <nav id="menu-list" class="menu-list transition-all" style="height:0">
         {{#each views}}
-            <a href="/#!/{{name}}" data-page="{{name}}"><i class="fa fa-{{icon}}"></i> {{label}}</a>
+        <a href="/#!/{{name}}" data-page="{{name}}"><i class="fa fa-{{icon}}"></i> {{label}}</a>
+        {{/each}}
+        {{#each links}}
+        <a href="{{href}}" target="_blank"><i class="fa fa-{{icon}}"></i> {{label}}</a>
         {{/each}}
     </nav>
 </div>
