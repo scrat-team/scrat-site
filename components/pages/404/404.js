@@ -1,3 +1,3 @@
 exports.getHTML = function(){
-    return __inline('404.handlebars')();
+    return __inline('404.tpl');
 };
