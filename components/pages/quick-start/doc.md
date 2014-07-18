@@ -1,4 +1,4 @@
-## 1. 安装开发工具
+## 1. 安装
 
 ```bash
 npm install -g scrat
@@ -10,7 +10,7 @@ npm install -g scrat
 
 *nix系统下使用 ``-g`` 参数全局安装scrat可能会遇到权限问题，解决办法请看 [这里](https://github.com/scrat-team/scrat/issues/1)
 
-## 2. 下载示例项目
+## 2. 示例
 
 使用 [git](http://www.git-scm.com/) clone [官网项目](https://github.com/scrat-team/scrat-site/)（或直接 [下载](https://github.com/scrat-team/scrat-site/archive/master.zip) 解压）
 
@@ -18,7 +18,7 @@ npm install -g scrat
 git clone http://git.io/kcqNXQ
 ```
 
-进入示例项目目录
+进入项目目录
 
 ```bash
 cd scrat-site
@@ -39,7 +39,7 @@ scrat-site
   `- README.md
 ```
 
-## 3. 构建示例项目
+## 3. 构建
 
 ```bash
 scrat release
@@ -49,7 +49,7 @@ scrat release
 
 工具构建之后，会把构建好的代码发布到调试目录下（执行``scrat server open``命令可以查看该目录），不会污染源码目录。release命令输出的点点点代表参与构建的源码文件，每个点代表一个文件，颜色暗的点表示该文件构建速度较快（小于10ms），颜色亮的点表示该文件构建速度较慢（小于100ms）
 
-## 4. 浏览示例项目
+## 4. 浏览
 
 ```bash
 scrat server start
@@ -57,9 +57,7 @@ scrat server start
 
 执行该命令会在调试目录下（执行``scrat server open``命令可以查看该目录）启动部署好的server目录下的服务器，启动server之前，会在调试目录下执行npm install安装package.json声明的依赖模块，因此用户不需要在源码工程中保存node_modules文件，保持源码目录的整洁干净。
 
-完成服务器启动后，打开浏览器访问页面即可预览项目效果：
-
-> http://127.0.0.1:5000
+完成服务器启动后，打开浏览器访问 http://127.0.0.1:5000 即可预览项目效果。
 
 ## 5. 文件监听+自动刷新
 
