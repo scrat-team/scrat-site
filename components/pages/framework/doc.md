@@ -1,10 +1,10 @@
-> 前端模块化框架肩负着 ``模块管理``、``资源加载`` 两项重要责任，与工具、性能、业务、部署等工程环节都有着非常紧密的联系。因此，模块化框架的设计应该最高优先级考虑工程需要。
+> 前端模块化框架肩负着 ``模块管理``、``资源加载`` 两项重要责任，与开发、工具、部署、性能优化等工程环节都有着非常紧密的联系。因此，模块化框架的设计应该最高优先级考虑工程需要。
 
 ## scrat.js
 
 > https://github.com/scrat-team/scrat.js
 
-scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作为模块化框架，与工具紧密配合，从而实现 ``js/css依赖管理``、``请求合并``、``按需加载``、``本地缓存``等功能，性能优化效果明显，具有较强的工程特性。
+scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作为模块化框架，与 [开发工具](https://www.npmjs.org/package/scrat) 紧密配合，从而实现 ``js/css依赖管理``、``请求合并``、``按需加载``、``本地缓存``等功能，性能优化效果明显，具有较强的工程特性。
 
 > 之所以没有使用已有的模块化框架（比如[requirejs](http://requirejs.org/)），完全是出于工程需要，而非[NIH](http://en.wikipedia.org/wiki/Not_invented_here)思想作祟，有兴趣一探究竟的同学可以阅读这篇文章：《[前端工程与模块化框架](https://github.com/fouber/blog/issues/4)》。
 
@@ -26,7 +26,7 @@ scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作�
 
 ### 3. 网络请求
 
-> 由于框架通过``require.config``接口知道了所有模块的依赖关系，因此在调用require.async时会将所依赖的js、css模块合并请求加载，再借助combo服务一举实现按需加载和请求合并的功能。
+> 由于框架通过``require.config``接口知道了所有模块的依赖关系，因此在调用require.async加载模块时，可以找到其依赖的所有js、css模块，再借助combo服务合并请求加载，一举实现按需加载和请求合并的功能。
 
 上述示例页面执行``require.async('a', callback);``时会发起两个combo请求(js与css)：
 
@@ -37,23 +37,8 @@ scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作�
 
 ## 接口说明
 
-### require.async(modules, callback)
-说明：加载并运行一组 JS 模块
-
-- @param {string|Array} modules - 要加载并运行的模块列表
-- @param {function} callback - 全部模块及其依赖加载成功后的回调函数
-
-示例：
-```javascript
-require.async(['ajax', 'event'], function (ajax, event) {
-    ajax.get('/someObjs', {length: 10}, function (data) {
-        event.emit('done', data);
-    });
-});
-```
-
 ### require.config(options)
-说明：设置并返回 Scrat.js 选项
+说明：设置并返回 scrat.js 配置选项
 
 - @param {object} [options] - 配置选项
 - @returns {object} options
@@ -72,12 +57,32 @@ require.async(['ajax', 'event'], function (ajax, event) {
 
 示例：
 ```javascript
-require.config(__FRAMEWORK_CONFIG__);
-// Scrat 在编译过程中会自动替换 __FRAMEWORK_CONFIG__ 为配置数据
+/**
+ * scrat 在编译过程中会自动替换 __FRAMEWORK_CONFIG__ 为配置数据
+ * 所以源码通常写成require.config(__FRAMEWORK_CONFIG__);构建
+ * 后得到如下结果
+ */
 require.config({
     cache: true, // 开启 localStorage 缓存
-    urlPattern: '/path/to/resources/%s', // 资源加载路径
-    comboPattern: '/path/to/combo-service??%s' // Combo 服务路径
+    urlPattern: '/static/%s', // 资源加载路径
+    comboPattern: '/combo??%s', // Combo 服务路径
+    alias: {...}, //别名表
+    deps: {...} //依赖表
+});
+```
+
+### require.async(modules, callback)
+说明：加载并运行一组 JS 模块
+
+- @param {string|Array} modules - 要加载并运行的模块列表
+- @param {function} callback - 全部模块及其依赖加载成功后的回调函数
+
+示例：
+```javascript
+require.async(['ajax', 'event'], function (ajax, event) {
+    ajax.get('/someObjs', {length: 10}, function (data) {
+        event.emit('done', data);
+    });
 });
 ```
 

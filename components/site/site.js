@@ -62,13 +62,15 @@ exports.load = function(context, preload){
             var p = dom.getAttribute('data-page');
             var clazz = dom.className.replace(/ active\b/, '');
             if(p === name){
-                var content;
-                if(typeof page.getMarkdown === 'function'){
-                    content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
-                } else {
-                    content = page.getHTML();
+                if(!dom.innerHTML){
+                    var content;
+                    if(typeof page.getMarkdown === 'function'){
+                        content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
+                    } else {
+                        content = page.getHTML();
+                    }
+                    dom.innerHTML = content;
                 }
-                dom.innerHTML = content;
                 dom.className = clazz + ' active';
                 if(typeof offset !== 'undefined'){
                     var anchor = dom.querySelectorAll('h2');
