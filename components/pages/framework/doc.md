@@ -33,7 +33,7 @@ scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作�
 * http://www.example.com/??proj/1.0.0/b.css,proj/1.0.0/a.css
 * http://www.example.com/??proj/1.0.0/b.js,proj/1.0.0/a.js
 
-加载完成后才会触发calblack函数。这种工具与框架配合解决模块化静态资源管理的方式，将工程性与前端性能发挥到了极致。
+请求全部加载完成后才会触发calblack函数。这种工具与框架配合解决模块化静态资源管理的方式，将工程性与前端性能发挥到了极致。
 
 ## 接口说明
 
