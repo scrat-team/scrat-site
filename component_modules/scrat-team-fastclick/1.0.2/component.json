@@ -1,0 +1,7 @@
+{
+  "version": "1.0.2",
+  "name": "fastclick",
+  "repo": "scrat-team/fastclick",
+  "description": "a scrat-installable fork of ftlabs/fastclick",
+  "main": "fastclick.js"
+}
