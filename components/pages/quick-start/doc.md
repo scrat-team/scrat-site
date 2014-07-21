@@ -1,4 +1,4 @@
-## 1. 安装
+## 1. 安装工具
 
 ```bash
 npm install -g scrat
@@ -10,7 +10,7 @@ npm install -g scrat
 
 *nix系统下使用 ``-g`` 参数全局安装scrat可能会遇到权限问题，解决办法请看 [这里](https://github.com/scrat-team/scrat/issues/1)
 
-## 2. 示例
+## 2. 下载示例
 
 使用 [git](http://www.git-scm.com/) clone [官网项目](https://github.com/scrat-team/scrat-site/)（或直接 [下载](https://github.com/scrat-team/scrat-site/archive/master.zip) 解压）
 
@@ -28,18 +28,76 @@ cd scrat-site
 
 ```bash
 scrat-site
-  |- component_modules (安装的第三方组件)
-  |- components        (模块化资源目录)
-  |- server            (nodejs服务器)
-  |- views             (非模块化资源目录)
-  |- component.json    (组件依赖描述)
-  |- package.json      (nodejs依赖描述)
-  |- fis-conf.js       (构建工具配置文件)
-  |- LICENSE
-  `- README.md
+  ├─ components     (模块化资源目录)
+  ├─ views          (非模块化资源目录)
+  ├─ server         (nodejs服务器)
+  ├─ component.json (组件依赖描述文件)
+  ├─ package.json   (nodejs包描述文件)
+  ├─ fis-conf.js    (构建工具配置文件)
+  ├─ LICENSE
+  └─ README.md
 ```
 
-## 3. 构建
+## 3. 安装外部组件
+
+在项目目录中执行命令：
+
+```bash
+scrat install
+```
+
+![scrat install安装外部组件](install.gif)
+
+scrat install 命令会根据项目目录下的 ``component.json`` 文件所描述的外部依赖，从GitHub下载指定版本的模块。本项目的component.json文件内容为：
+
+```json
+{
+  "name": "scrat-site",
+  "version": "0.1.0",
+  "dependencies": {
+    "scrat-team/each": "0.1.0",
+    "scrat-team/fastclick": "1.0.2",
+    "scrat-team/router": "0.1.0",
+    "scrat-team/es5-safe": "0.1.0",
+    "scrat-team/font-awesome": "4.1.0"
+  }
+}
+```
+
+scrat以 [component](http://component.io) 作为组件生态，方便获取业界已有的成熟组件，也可以让多个团队通过Github共享组件，提高项目初期的开发效率，有关scrat组件生态的更多内容请阅读 [这里](/#!/todo)。
+
+安装完成后，项目目录下出现一个新的文件夹 ``component_modules``，按版本存放第三方组件。
+
+```bash
+scrat-site
+  ├─ components (当前项目组件)
+  ├─ component_modules (第三方组件)
+  │  ├─ scrat-team-each
+  │  │  └─ 0.1.0
+  │  ├─ scrat-team-es5-safe
+  │  │  └─ 0.1.0
+  │  ├─ scrat-team-extend
+  │  │  └─ 0.1.0
+  │  ├─ scrat-team-fastclick
+  │  │  └─ 1.0.2
+  │  ├─ scrat-team-font-awesome
+  │  │  └─ 4.1.0
+  │  ├─ scrat-team-router
+  │  │  └─ 0.1.0
+  │  └─ scrat-team-type
+  │      └─ 0.1.0
+  ├─ server
+  ├─ views
+  ├─ component.json
+  ├─ package.json
+  ├─ fis-conf.js
+  ├─ LICENSE
+  └─ README.md
+```
+
+## 4. 构建项目
+
+在项目目录中执行命令：
 
 ```bash
 scrat release
@@ -49,17 +107,21 @@ scrat release
 
 工具构建之后，会把构建好的代码发布到调试目录下（执行``scrat server open``命令可以查看该目录），不会污染源码目录。release命令输出的点点点代表参与构建的源码文件，每个点代表一个文件，颜色暗的点表示该文件构建速度较快（小于10ms），颜色亮的点表示该文件构建速度较慢（小于100ms）
 
-## 4. 浏览
+## 5. 浏览项目
+
+在任意位置执行命令：
 
 ```bash
 scrat server start
 ```
 
-执行该命令会在调试目录下（执行``scrat server open``命令可以查看该目录）启动部署好的server目录下的服务器，启动server之前，会在调试目录下执行npm install安装package.json声明的依赖模块，因此用户不需要在源码工程中保存node_modules文件，保持源码目录的整洁干净。
+该命令会在调试目录下（执行``scrat server open``命令可以查看该目录）启动部署好的server目录下的服务器，启动server之前，会在调试目录下执行npm install安装package.json声明的依赖模块，因此用户不需要在源码工程中保存node_modules文件，保持源码目录的整洁干净。
 
 完成服务器启动后，打开浏览器访问 http://127.0.0.1:5000 即可预览项目效果。
 
-## 5. 文件监听+自动刷新
+## 6. 文件监听+自动刷新
+
+在项目目录中执行命令：
 
 ```bash
 scrat release -wL
@@ -69,7 +131,9 @@ scrat release -wL
 
 > -wL是 --watch(监听) 和 --live(刷新) 两个参数的简写组合，更多参数及使用方式请查看[这里](/#!/todo)
 
-## 6. 发布示例项目
+## 7. 发布项目
+
+在项目目录中执行命令：
 
 ```bash
 scrat release -opd ../output
@@ -85,9 +149,9 @@ scrat release -opd ../output
 ../output
   ├─ public
   │  ├─ c (模块化资源部署目录)
-  │  │  ├─ ftlabs-fastclick
-  │  │  │  └── 1.0.2
   │  │  ├─ scrat-site
+  │  │  │  └── 0.1.0
+  │  │  ├─ scrat-team-type
   │  │  │  └── 0.1.0
   │  │  ├─ scrat-team-each
   │  │  │  └── 0.1.0
@@ -99,8 +163,8 @@ scrat release -opd ../output
   │  │  │  └── 4.1.0
   │  │  ├─ scrat-team-router
   │  │  │  └── 0.1.0
-  │  │  └─ scrat-team-type
-  │  │     └── 0.1.0
+  │  │  └─ scrat-team-fastclick
+  │  │     └── 1.0.2
   │  └─ scrat-site (非模块化资源部署目录)
   │     └─ 0.1.0
   │        ├── boot.js
