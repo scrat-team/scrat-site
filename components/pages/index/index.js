@@ -14,7 +14,7 @@ module.exports = {
                 href: '/#!/todo'
             },
             {
-                title: '组件生态',
+                title: '模块生态',
                 icon: 'github',
                 href: '/#!/todo'
             },

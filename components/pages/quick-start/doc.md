@@ -64,7 +64,7 @@ scrat install 命令会根据项目目录下的 ``component.json`` 文件所描�
 }
 ```
 
-scrat以 [component](https://github.com/component/) 作为组件生态，方便获取业界已有的成熟组件，也可以让多个团队通过Github共享组件，提高项目初期的开发效率，有关scrat组件生态的更多内容请阅读 [这里](/#!/todo)。
+scrat以 [component](https://github.com/component/) 作为模块生态，方便获取业界已有的成熟组件，也可以让多个团队通过Github共享组件，提高项目初期的开发效率，有关scrat模块生态的更多内容请阅读 [这里](/#!/todo)。
 
 安装完成后，项目目录下出现一个新的文件夹 ``component_modules``，按版本存放第三方组件。
 
@@ -192,7 +192,7 @@ scrat release -op
 * [开发目录结构说明](/#!/todo)
 * [模块化开发](/#!/todo)
 * [模块化框架](/#!/todo)
-* [组件生态](/#!/todo)
+* [模块生态](/#!/todo)
 * [文件监听与自动刷新](/#!/todo)
 * [各种构建参数搭配](/#!/todo)
 * [部署目录结构说明](/#!/todo)

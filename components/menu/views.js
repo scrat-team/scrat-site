@@ -19,7 +19,7 @@ module.exports = [
     {
         name: 'components',
         icon: 'puzzle-piece',
-        label: '组件生态'
+        label: '模块生态'
     },
     {
         name: 'command',
@@ -34,6 +34,6 @@ module.exports = [
     {
         name: 'practice',
         icon: 'lightbulb-o',
-        label: '最佳实践'
+        label: '项目实战'
     }
 ];
