@@ -248,7 +248,7 @@
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 30px;
+  padding-left: 5%;
 }
 
 .markdown-body ol ol,
@@ -354,6 +354,7 @@
   overflow: auto;
   padding: 6px 10px;
   border-radius: 3px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .markdown-body pre {
