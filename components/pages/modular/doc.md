@@ -104,7 +104,7 @@ exports.icon = function(img){
 }
 ```
 
-> 源码中的相对路径构建后可以替换为部署后的绝对路径，是模块独立性的基本保证。只有将模块所需的样式、结构、逻辑都维护在一起，并且部署后还能定位到，才能保证模块独立可用。
+> 将源码中的相对路径构建后替换为部署后的绝对路径，是模块独立性的基本保证。只有将模块所需的样式、结构、逻辑都维护在一起，并且部署后还能定位到，才能保证模块独立可用。
 
 关于工程模块的一些约定：
 
@@ -147,15 +147,15 @@ project
   ├─ component_modules (生态模块目录)
   │  └─ FortAwesome-Font-Awesome
   │      └─ 4.1.0
-  │          ├─ component.json
-  │          ├─ css
-  │          │  └─ font-awesome.css
-  │          └─ fonts
-  │             ├─ FontAwesome.otf
-  │             ├─ fontawesome-webfont.eot
-  │             ├─ fontawesome-webfont.svg
-  │             ├─ fontawesome-webfont.ttf
-  │             └─ fontawesome-webfont.woff
+  │         ├─ component.json
+  │         ├─ css
+  │         │  └─ font-awesome.css
+  │         └─ fonts
+  │            ├─ FontAwesome.otf
+  │            ├─ fontawesome-webfont.eot
+  │            ├─ fontawesome-webfont.svg
+  │            ├─ fontawesome-webfont.ttf
+  │            └─ fontawesome-webfont.woff
   ├─ components
   ├─ views
   ├─ component.json    (生态依赖描述)
@@ -245,21 +245,23 @@ fis.config.set('framework.alias.foo-bar', 'components/foo/bar.js');
 
 这样就可以在其他模块化文件中通过 ``require('foo-bar')`` 来直接引用了。
 
+> 更多框架配置请阅读 [这里](/#!/todo)
+
 ### 2. 工程模块支持多级目录
 
 多级目录可以帮助业务合理的规划模块拆分，比如scrat与 [vue.js](http://vuejs.org/) 结合的时候，可以按照vue的概念来划分模块：
 
 ```bash
 project
-  ├─ components        (工程模块)
-  │  ├─ component
+  ├─ components    (工程模块)
+  │  ├─ directive  (directive)
+  │  │  └─ more
+  │  ├─ filter     (filter)
+  │  │  └─ data
+  │  ├─ component  (组件)
   │  │  ├─ header
   │  │  └─ footer
-  │  ├─ directive
-  │  │  └─ more
-  │  ├─ filter
-  │  │  └─ data
-  │  └─ page
+  │  └─ page       (页面)
   │     ├─ index
   │     └─ detail
   ├─ ...
