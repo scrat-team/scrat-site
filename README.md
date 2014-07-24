@@ -1,10 +1,10 @@
-![模块化开发](components/pages/modular/cubes.png)
+![模块化开发](views/img/cubes.png)
 
 ## scrat官网项目
 
 > http://scrat-team.github.io/
 >
-> ![二维码](views/qrcode.png?v=2)
+> ![二维码](views/img/qrcode.png)
 >
 > [![Build Status](https://travis-ci.org/scrat-team/scrat-site.svg?branch=master)](https://travis-ci.org/scrat-team/scrat-site)
 
