@@ -5,3 +5,4 @@ component_modules
 *.bak
 *.tmp
 Thumbs.db
+output
