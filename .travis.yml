@@ -1,18 +1,16 @@
 language: node_js
 node_js:
 - '0.10'
-script:
-- scrat release -loumd output
 env:
   global:
   - PATH: node_modules/.bin/:$PATH
   - REPO_SLUG: scrat-team/scrat-team.github.io
   - secure: BhZRYbcOBhSv00Z2k6CgvOnceq+tHKT0TMDa+/bnijQTxqUa0qeqfD7ZiXyfWK3ciqDJ+NZ9PQGNHoCNrGDnrUQjlC27rFrYpnxqeBKcoH/o5JXULs9QxVgyNJW9xczUGl3eT5FmX4M5Y5uyQvYSqP3Z3faNpilGaLc5JWGWzw0=
-before_install:
-- git clone --quiet --branch=deploy https://${GH_TOKEN}@github.com/${REPO_SLUG}.git output > /dev/null
 install:
 - npm install scrat
 - scrat -v
+script:
+- scrat release -loumd output
 after_success:
 - sh .build.sh
 cache:
