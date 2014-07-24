@@ -2,7 +2,9 @@
 
 ## scrat官网项目
 
-地址：http://scrat-team.github.io/
+> http://scrat-team.github.io/
+>
+> ![二维码](views/qrcode.png)
 
 travis-ci：[![Build Status](https://travis-ci.org/scrat-team/scrat-site.svg?branch=master)](https://travis-ci.org/scrat-team/scrat-site)
 
