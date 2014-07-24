@@ -113,7 +113,7 @@ exports.icon = function(img){
 1. 任何文件命名没有约束，主文件的与目录同名要求只是为了引用方便而已。
 1. 在代码中使用工程相对路径开发，scrat构建会后自动替换成绝对路径。
 
-## 从生态安装模块
+## 安装生态模块
 
 使用生态模块可以提高开发效率，scrat采用 [component](https://github.com/component) 规范作为生态规范，因此用户可以从component生态中直接下载组件供项目使用。
 
