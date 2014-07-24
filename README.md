@@ -1,8 +1,20 @@
+![模块化开发](components/pages/modular/cubes.png)
+
 ## scrat官网项目
 
 [![Build Status](https://travis-ci.org/scrat-team/scrat-site.svg?branch=master)](https://travis-ci.org/scrat-team/scrat-site)
 
-> http://scrat-team.github.io/#!/index
+![工具版本](components/pages/quick-start/version.gif)
+
+地址：http://scrat-team.github.io/
+
+> 完整的模块化开发，js、css、模板一起维护
+
+![模块化开发](components/pages/modular/page.png)
+
+> 像写nodejs一样写js模块
+
+![js模块化](components/pages/framework/source.png)
 
 # 文档
 
