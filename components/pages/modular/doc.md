@@ -133,12 +133,10 @@ component有很丰富的组件生态，比如 [FortAwesome/Font-Awesome](https:/
 在项目目录下执行：
 
 ```bash
-scrat install FortAwesome/Font-Awesome --save
+scrat install FortAwesome/Font-Awesome
 ```
 
 ![使用scrat install来安装font-awesome](install.gif)
-
-``--save`` 参数可以将依赖回写到 ``component.json`` 中记录起来，方便后续升级。
 
 安装完成后，``component_modules``目录下下会出现font-awesome模块的安装文件：
 
