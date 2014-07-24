@@ -12,6 +12,11 @@ fis.config.set('modules.optimizer.tpl', 'html-minifier');
 
 // scrat.js框架开启localstorage缓存
 fis.config.set('framework.cache', true);
+// 静态资源加载路径模式
+fis.config.set('framework.urlPattern', '/public/c/%s');
+
+//设置url前缀
+fis.config.set('urlPrefix', '/public');
 
 // fis-lint-jshint插件配置
 fis.config.set('settings.lint.jshint', {
