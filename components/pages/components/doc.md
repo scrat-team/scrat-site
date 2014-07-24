@@ -1,6 +1,6 @@
 ## 原理
 
-> scrat可以从gitHub下载符合 [component](http://github.com/component) 规范的模块，方便团队和项目间共享技术成果。
+> scrat可以从github下载符合 [component](http://github.com/component) 规范的模块，方便团队和项目间共享技术成果。
 
 ![原理示意图](install.png)
 
@@ -121,7 +121,7 @@ attachFastClick(document.body);
     依赖模块请 ``务必`` 写准确的版本号，以保证模块本身的稳定性。
 
 1. 编写代码，实现模块功能。编码时，资源引用都是用 ``相对路径`` 即可。
-1. 将代码发布到Github：
+1. 将代码提交到Github：
 
     ```bash
     git add -A
