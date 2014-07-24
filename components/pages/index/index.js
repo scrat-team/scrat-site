@@ -6,7 +6,7 @@ module.exports = {
             {
                 title: '模块化开发',
                 icon: 'cubes',
-                href: '/#!/todo'
+                href: '/#!/modular'
             },
             {
                 title: '按版本发布',
@@ -16,7 +16,7 @@ module.exports = {
             {
                 title: '模块生态',
                 icon: 'github',
-                href: '/#!/todo'
+                href: '/#!/components'
             },
             {
                 title: '按需加载',
