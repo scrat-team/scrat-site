@@ -55,36 +55,36 @@ exports.load = function(context, preload){
     var offset = context.queries.offset;
     name = this.has(name) ? name : '404';
     var container = document.getElementById('site-views');
+    var pages = container.querySelectorAll('[data-page]');
+    each(pages, function(dom){
+        var p = dom.getAttribute('data-page');
+        if(p !== lastView){
+            dom.innerHTML = '';
+        }
+        var clazz = ' ' + dom.className;
+        dom.className = clazz.replace(/\s+active\b/, '').trim();
+    });
     // 异步加载
     require.async(views[name], function(page){
-        var pages = container.querySelectorAll('[data-page]');
-        each(pages, function(dom){
-            var p = dom.getAttribute('data-page');
-            var clazz = dom.className.replace(/ active\b/, '');
-            if(p === name){
-                if(!dom.innerHTML){
-                    var content;
-                    if(typeof page.getMarkdown === 'function'){
-                        content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
-                    } else {
-                        content = page.getHTML();
-                    }
-                    dom.innerHTML = content;
+        var dom = container.querySelector('[data-page=' + name + ']');
+        if(dom){
+            if(!dom.innerHTML){
+                var content;
+                if(typeof page.getMarkdown === 'function'){
+                    content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
+                } else {
+                    content = page.getHTML();
                 }
-                dom.className = clazz + ' active';
-                if(typeof offset !== 'undefined'){
-                    var anchor = dom.querySelectorAll('h2');
-                    if(anchor && anchor[offset]){
-                        anchor[offset].scrollIntoView();
-                    }
-                }
-            } else {
-                if(p !== lastView){
-                    dom.innerHTML = '';
-                }
-                dom.className = clazz;
+                dom.innerHTML = content;
             }
-        });
+            dom.className = dom.className + ' active';
+            if(typeof offset !== 'undefined'){
+                var anchor = dom.querySelectorAll('h2');
+                if(anchor && anchor[offset]){
+                    anchor[offset].scrollIntoView();
+                }
+            }
+        }
         menu.active(name);
 
         // 如果开启预加载，则在完成当前页面加载之后去异步加载其他页面

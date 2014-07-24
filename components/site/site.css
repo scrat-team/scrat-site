@@ -52,6 +52,8 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    /* base64内嵌loading.gif图片 */
+    background: url(loading.gif?__inline) no-repeat center center;
 }
 
 .site-view {
