@@ -64,6 +64,7 @@ exports.load = function(context, preload){
         var clazz = ' ' + dom.className;
         dom.className = clazz.replace(/\s+active\b/, '').trim();
     });
+    menu.active(name);
     // 异步加载
     require.async(views[name], function(page){
         var dom = container.querySelector('[data-page=' + name + ']');
@@ -85,7 +86,6 @@ exports.load = function(context, preload){
                 }
             }
         }
-        menu.active(name);
 
         // 如果开启预加载，则在完成当前页面加载之后去异步加载其他页面
         if(preload){
