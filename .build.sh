@@ -2,9 +2,11 @@
 
 if [ -d output ]; then
     echo "➥ Commit files"
+    version=`node -p 'require("./package.json").version;'`
     git clone --quiet --branch=master https://${GH_TOKEN}@github.com/${REPO_SLUG}.git ${REPO_SLUG} > /dev/null
-    cp -fr output/** ${REPO_SLUG}
+    cp -fr output/* ${REPO_SLUG}
     cd ${REPO_SLUG}
+    cp public/scrat-site/${version}/index.html .
     ls -l
     git config user.email "travis@travis-ci.org"
     git config user.name "travis-ci"
