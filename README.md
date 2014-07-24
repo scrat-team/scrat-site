@@ -4,7 +4,7 @@
 
 > http://scrat-team.github.io/
 >
-> ![二维码](views/qrcode.png)
+> ![二维码](views/qrcode.png?v=2)
 
 travis-ci：[![Build Status](https://travis-ci.org/scrat-team/scrat-site.svg?branch=master)](https://travis-ci.org/scrat-team/scrat-site)
 
