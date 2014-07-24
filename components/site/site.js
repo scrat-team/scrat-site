@@ -64,25 +64,28 @@ exports.load = function(context, preload){
         var clazz = ' ' + dom.className;
         dom.className = clazz.replace(/\s+active\b/, '').trim();
     });
-    menu.active(name);
+    menu.active(lastView = name);
     // 异步加载
     require.async(views[name], function(page){
-        var dom = container.querySelector('[data-page=' + name + ']');
-        if(dom){
-            if(!dom.innerHTML){
-                var content;
-                if(typeof page.getMarkdown === 'function'){
-                    content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
-                } else {
-                    content = page.getHTML();
+        //防止用户loading过程中多次切换
+        if(name === lastView) {
+            var dom = container.querySelector('[data-page=' + name + ']');
+            if(dom){
+                if(!dom.innerHTML){
+                    var content;
+                    if(typeof page.getMarkdown === 'function'){
+                        content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
+                    } else {
+                        content = page.getHTML();
+                    }
+                    dom.innerHTML = content;
                 }
-                dom.innerHTML = content;
-            }
-            dom.className = dom.className + ' active';
-            if(typeof offset !== 'undefined'){
-                var anchor = dom.querySelectorAll('h2');
-                if(anchor && anchor[offset]){
-                    anchor[offset].scrollIntoView();
+                dom.className = dom.className + ' active';
+                if(typeof offset !== 'undefined'){
+                    var anchor = dom.querySelectorAll('h2');
+                    if(anchor && anchor[offset]){
+                        anchor[offset].scrollIntoView();
+                    }
                 }
             }
         }
@@ -99,7 +102,6 @@ exports.load = function(context, preload){
             // 发起异步请求获取，不阻塞当前页面
             require.async(others);
         }
-        lastView = name;
     });
 };
 
