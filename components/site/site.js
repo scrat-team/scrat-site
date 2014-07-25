@@ -69,7 +69,7 @@ exports.load = function(context, preload){
     require.async(views[name], function(page){
         //防止用户loading过程中多次切换
         if(name === lastView) {
-            var dom = container.querySelector('[data-page=' + name + ']');
+            var dom = container.querySelector('[data-page="' + name + '"]');
             if(dom){
                 if(!dom.innerHTML){
                     var content;
