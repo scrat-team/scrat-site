@@ -36,7 +36,7 @@ exports.register = function(name, moduleName){
 };
 
 /**
- * 判断是否注册页面
+ * 判断页面是否注册
  * @param {String} name 页面名
  * @returns {boolean}
  */
