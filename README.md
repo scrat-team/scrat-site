@@ -15,13 +15,36 @@ scrat -v
 
 ![工具版本](components/pages/quick-start/version.gif)
 
+## 功能
+
+- [x] [模块化开发](http://scrat-team.github.io/#!/todo)
+- [x] [按版本发布](http://scrat-team.github.io/#!/todo)
+- [x] [模块生态](http://scrat-team.github.io/#!/todo)
+
+- [x] [按需加载](http://scrat-team.github.io/#!/todo)
+- [x] [请求合并](http://scrat-team.github.io/#!/todo)
+- [x] [本地缓存](http://scrat-team.github.io/#!/todo)
+
+- [x] [代码压缩](http://scrat-team.github.io/#!/todo)
+- [x] [代码校验](http://scrat-team.github.io/#!/todo)
+- [x] [CSS雪碧图](http://scrat-team.github.io/#!/todo)
+
+- [x] [本地服务器](http://scrat-team.github.io/#!/todo)
+- [x] [文件监听](http://scrat-team.github.io/#!/todo)
+- [x] [自动刷新](http://scrat-team.github.io/#!/todo)
+
+- [x] [资源内嵌](http://scrat-team.github.io/#!/todo)
+- [x] [多语言编译](http://scrat-team.github.io/#!/todo)
+- [x] [项目脚手架](http://scrat-team.github.io/#!/todo)
+
+
 ## 文档
 
-* [快速开始](components/pages/quick-start/doc.md)
-* [模块开发](components/pages/modular/doc.md)
-* [前端框架](components/pages/framework/doc.md)
-* [模块生态](components/pages/components/doc.md)
-* [工具命令](components/pages/command/doc.md)
-* [工具配置](components/pages/settings/doc.md)
-* [项目实战](components/pages/practice/doc.md)
+* [快速开始](http://scrat-team.github.io/#!/quick-start)
+* [模块开发](http://scrat-team.github.io/modular)
+* [前端框架](http://scrat-team.github.io/framework)
+* [模块生态](http://scrat-team.github.io/components)
+* [工具命令](http://scrat-team.github.io/command)
+* [工具配置](http://scrat-team.github.io/settings)
+* [项目实战](http://scrat-team.github.io/practice)
 * [幕后花絮](https://github.com/fouber/blog/issues/2)
