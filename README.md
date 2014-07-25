@@ -17,21 +17,26 @@ scrat -v
 
 ## 功能
 
-- [x] [模块化开发](http://scrat-team.github.io/#!/todo)
-- [x] [按版本发布](http://scrat-team.github.io/#!/todo)
-- [x] [模块生态](http://scrat-team.github.io/#!/todo)
-- [x] [按需加载](http://scrat-team.github.io/#!/todo)
-- [x] [请求合并](http://scrat-team.github.io/#!/todo)
-- [x] [本地缓存](http://scrat-team.github.io/#!/todo)
-- [x] [代码压缩](http://scrat-team.github.io/#!/todo)
-- [x] [代码校验](http://scrat-team.github.io/#!/todo)
-- [x] [CSS雪碧图](http://scrat-team.github.io/#!/todo)
-- [x] [本地服务器](http://scrat-team.github.io/#!/todo)
-- [x] [文件监听](http://scrat-team.github.io/#!/todo)
-- [x] [自动刷新](http://scrat-team.github.io/#!/todo)
-- [x] [资源内嵌](http://scrat-team.github.io/#!/todo)
-- [x] [多语言编译](http://scrat-team.github.io/#!/todo)
-- [x] [项目脚手架](http://scrat-team.github.io/#!/todo)
+- 模块化
+    - [x] [模块化开发](http://scrat-team.github.io/#!/todo)
+    - [x] [按版本发布](http://scrat-team.github.io/#!/todo)
+    - [x] [模块生态](http://scrat-team.github.io/#!/todo)
+- 性能优化
+    - [x] [按需加载](http://scrat-team.github.io/#!/todo)
+    - [x] [请求合并](http://scrat-team.github.io/#!/todo)
+    - [x] [本地缓存](http://scrat-team.github.io/#!/todo)
+- 自动化
+    - [x] [代码压缩](http://scrat-team.github.io/#!/todo)
+    - [x] [代码校验](http://scrat-team.github.io/#!/todo)
+    - [x] [CSS雪碧图](http://scrat-team.github.io/#!/todo)
+- 本地调试
+    - [x] [本地服务器](http://scrat-team.github.io/#!/todo)
+    - [x] [文件监听](http://scrat-team.github.io/#!/todo)
+    - [x] [自动刷新](http://scrat-team.github.io/#!/todo)
+- 其他功能
+    - [x] [资源内嵌](http://scrat-team.github.io/#!/todo)
+    - [x] [多语言编译](http://scrat-team.github.io/#!/todo)
+    - [x] [项目脚手架](http://scrat-team.github.io/#!/todo)
 
 
 ## 文档
