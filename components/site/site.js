@@ -7,7 +7,7 @@ var menu = require('menu');
 var footer = require('footer');
 
 // 内部变量
-var lastView;
+var lastView, timer;
 
 // 定义页面和模块对应关系
 var views = {
@@ -50,6 +50,7 @@ exports.has = function(name){
  * @param {boolean} preload 是否预加载其他页面
  */
 exports.load = function(context, preload){
+    clearTimeout(timer);
     // 未注册页面则展示404
     var name = context.params.page;
     var offset = context.queries.offset;
@@ -84,7 +85,11 @@ exports.load = function(context, preload){
                 if(typeof offset !== 'undefined'){
                     var anchor = dom.querySelectorAll('h2');
                     if(anchor && anchor[offset]){
-                        anchor[offset].scrollIntoView();
+                        timer = setTimeout((function(anchor){
+                            return function(){
+                                anchor.scrollIntoView();
+                            }
+                        })(anchor[offset]), 401);
                     }
                 }
             }
