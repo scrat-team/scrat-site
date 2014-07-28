@@ -59,6 +59,9 @@ fis.config.set('settings.lint.jshint', {
 // 使用pngquant把png图片压缩为png8，减少质量
 fis.config.set('settings.optimizer.png-compressor.type', 'pngquant');
 
+// markdown的标题id前缀
+fis.config.set('settings.parser.marked.headerPrefix', 'user-content-');
+
 // fis-optimizer-html-minifier插件配置
 fis.config.set('settings.optimizer.html-minifier', {
     // fis直接将此配置传递给html-minfier模块

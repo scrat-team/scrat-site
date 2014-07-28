@@ -53,7 +53,7 @@ exports.load = function(context, preload){
     clearTimeout(timer);
     // 未注册页面则展示404
     var name = context.params.page;
-    var offset = context.queries.offset;
+    var title = context.queries.title;
     name = this.has(name) ? name : '404';
     var container = document.getElementById('site-views');
     var pages = container.querySelectorAll('[data-page]');
@@ -82,14 +82,15 @@ exports.load = function(context, preload){
                     dom.innerHTML = content;
                 }
                 dom.className = dom.className + ' active';
-                if(typeof offset !== 'undefined'){
-                    var anchor = dom.querySelectorAll('h2');
-                    if(anchor && anchor[offset]){
-                        timer = setTimeout((function(anchor){
+                if(typeof title !== 'undefined'){
+                    var id = 'user-content-' + encodeURIComponent(title);
+                    var anchor = document.getElementById(id);
+                    if(anchor){
+                        timer = setTimeout((function(anchor, dom){
                             return function(){
-                                anchor.scrollIntoView();
+                                dom.scrollTop = anchor.offsetTop;
                             }
-                        })(anchor[offset]), 401);
+                        })(anchor, dom), 401);
                     }
                 }
             }

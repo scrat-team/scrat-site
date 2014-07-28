@@ -34,6 +34,10 @@ project
 
 ## framework
 
+> [前端框架](/!#/todo) 相关的构建配置
+
+scrat的模块化开发方案采用前端框架与构建工具结合的方式实现，
+
 ### framework.cache
 
 ### framework.combo
