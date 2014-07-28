@@ -11,7 +11,7 @@ module.exports = {
             {
                 title: '按版本发布',
                 icon: 'code-fork',
-                href: '/#!/todo'
+                href: '/#!/settings?title=version'
             },
             {
                 title: '模块生态',
@@ -21,47 +21,47 @@ module.exports = {
             {
                 title: '按需加载',
                 icon: 'crosshairs',
-                href: '/#!/todo'
+                href: '/#!/framework?title=scrat.js'
             },
             {
                 title: '请求合并',
                 icon: 'flash',
-                href: '/#!/todo'
+                href: '/#!/framework?title=3. 网络请求'
             },
             {
                 title: '本地缓存',
                 icon: 'database',
-                href: '/#!/todo'
+                href: '/#!/settings?title=framework.cache'
             },
             {
                 title: '代码压缩',
                 icon: 'leaf',
-                href: '/#!/todo'
+                href: '/#!/settings?title=settings.optimizer.uglify-js'
             },
             {
                 title: '代码校验',
                 icon: 'search',
-                href: '/#!/todo'
+                href: '/#!/settings?title=settings.lint.jshint'
             },
             {
                 title: 'CSS雪碧图',
                 icon: 'th',
-                href: '/#!/todo'
+                href: '/#!/settings?title=settings.spriter.csssprites'
             },
             {
                 title: '本地服务器',
                 icon: 'rocket',
-                href: '/#!/todo'
+                href: '/#!/command?title=scrat server start'
             },
             {
                 title: '文件监听',
                 icon: 'eye',
-                href: '/#!/todo'
+                href: '/#!/command?title=本地开发'
             },
             {
                 title: '自动刷新',
                 icon: 'refresh',
-                href: '/#!/todo'
+                href: '/#!/command?title=本地开发'
             },
             {
                 title: '资源内嵌',
@@ -71,12 +71,12 @@ module.exports = {
             {
                 title: '多语言编译',
                 icon: 'code',
-                href: '/#!/todo'
+                href: '/#!/settings?title=settings.parser.stylus'
             },
             {
                 title: '项目脚手架',
                 icon: 'wrench',
-                href: '/#!/todo'
+                href: '/#!/command?title=scrat init'
             }
         ];
         var tpl = __inline('index.handlebars');
