@@ -58,25 +58,111 @@ scrat release -wL
 
 由于命令省略了 ``--dest <paths>`` 参数，因此scrat会把构建结果发送到默认的服务器目录，使用 ``scrat server open`` 命令可以查看该目录。
 
+### 上线部署
 
+> 加域名 + 压缩 + 校验 + 加md5戳 + 请求合并&CSS雪碧图 + 发布到指定目录。
 
-### 事实上
+要上线部署时，就不在需要文件监听(--watch)和自动刷新(--live)了，此时使用 ``--dest <paths>`` 参数把处理后的代码发布到指定目录，然后将发布目录下的代码部署到线上即可，在项目目录下执行：
+
+```bash
+scrat release --domains --optimzie --lint --md5 --packe --dest ../output
+```
+
+同样的，可以使用简写和连写的方式：
+
+```bash
+scrat release -Dolmpd ../output
+```
+
+将代码发布到指定目录后就可以做进一步的部署安排了，scrat [官网项目](https://github.com/scrat-team/scrat-site/) 就是用scrat进行 [持续集成构建](https://travis-ci.org/scrat-team/scrat-site) 的，代码构建好之后又做了一系列的 [部署操作](https://github.com/scrat-team/scrat-site/blob/master/.build.sh)，最终将构建结果推送到github.io上。
 
 ## scrat install
 
 > 从GitHub安装生态组件，提升开发效率。
 
+scrat采用 [component](https://github.com/component) 作为模块生态，有关模块生态的更多信息请阅读 [这里](/#!/todo)。
+
+在项目目录下准备一个 ``component.json`` 文件，用于记录生态模块安装信息。如果component.json中已声明了依赖，直接执行：
+
+```bash
+scrat install
+```
+
+即可将依赖的生态模块直接从Github下载下来并安装到工程中：
+
 ![安装生态截图](../quick-start/install.gif)
+
+当项目未获到一定阶段后，需要安装新的模块，直接运行：
+
+```bash
+scrat install <用户名>/<仓库名>
+```
+
+其中的用户名为GitHub用户名，如果需要安装指定版本的模块，则执行：
+
+```bash
+scrat install <用户名>/<仓库名>@版本号
+```
+
+例如想安装最新版的 [fastclick](https://github.com/ftlabs/fastclick)，其拥有者为 [ftlabs](https://github.com/ftlabs)，则在项目目录下执行：
+
+```bash
+scrat install ftlabs/fastclick
+```
+
+如果要安装 ``v0.6.5`` 这个版本，则执行：
+
+```bash
+scrat install ftlabs/fastclick@v0.6.5
+```
 
 ## scrat server &lt;cmd&gt;
 
-> 启动nodejs服务器，无需环境依赖即可调试。
+> nodejs服务器相关命令，无需环境依赖即可调试。
+
+scrat设计之初是考虑和nodejs服务器进行结合的项目开发，因此内置的调试服务器也是来自工程的源代码支持。scrat server有三条服务器相关的命令，分别是：
+
+### scrat server open
+
+> 打开调试服务器目录
+
+``scrat release`` 命令默认的发布路径极为该目录。项目开发时，执行 scrat release 命令，工具会把工程构建之后发布到这个目录下。不同的操作系统其调试服务器目录也不同，其中：
+
+* mac：/Users/&lt;用户名&gt;/.scrat-tmp/www
+* linux：/home/&lt;用户名&gt;/.scrat-tmp/www
+* windows：C:\\Documents and Settings\\&lt;用户名&gt;\Application Data\\.scrat-tmp\\www
+
+调试目录是一个 ``垃圾堆``，把项目构建过去浏览即可。
+
+### scrat server start
+
+> 启动调试服务器
+
+在启动调试服务器之前，先对项目进行一次构建，执行 ``scrat release``，工具把构建后的代码发布到调试目录中，此时在 ``任意位置`` 执行：
+
+```bash
+scrat server start
+```
+
+命令会去到 ``调试目录`` 中执行 ``npm install && node .`` 命令。这样，如果源码工程中有 ``package.json`` 文件，经过scrat release命令的构建，就会发布到调试目录下，之后再在调试目录下执行 ``npm install && node .`` 即可根据package.json的记录安装npm包并执行package.json所指定的main文件了。
+
+### scrat server clean
+
+> 清除调试目录下的文件
+
+有时候本地开发可能会在多个项目中切换，由于scrat构建时，默认的代码都发布到相同的调试目录下，因此切换项目前应该先进行清除调试目录文件的操作。在任意位置执行：
+
+```bash
+scrat server clean
+```
+
+即可清除调试目录下的文件，得到一个干净的调试环境。
 
 ## scrat init
 
 > 项目脚手架，快速创建新项目。
 
-## 使用 ``-h`` 参数获取帮助
+## 用 ``-h`` 参数获取帮助
 
 所有命令的基本用法及参数说明均可以通过 ``-h`` 参数获取。比如想查看scrat有哪些内置命令，则执行：
 
