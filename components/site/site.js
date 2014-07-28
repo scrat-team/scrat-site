@@ -83,7 +83,7 @@ exports.load = function(context, preload){
                 }
                 dom.className = dom.className + ' active';
                 if(typeof title !== 'undefined'){
-                    var id = 'user-content-' + encodeURIComponent(title);
+                    var id = 'user-content-' + encodeURIComponent(title.toLowerCase());
                     var anchor = document.getElementById(id);
                     if(anchor){
                         timer = setTimeout((function(anchor, dom){
