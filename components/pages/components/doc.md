@@ -55,7 +55,7 @@ attachFastClick(document.body);
 }
 ```
 
-> 更多模块化开发技巧请阅读 [这里](/#!/todo)
+> 更多模块化开发技巧请阅读 [这里](/#!/modular)
 
 ## 创建生态模块
 
@@ -142,4 +142,4 @@ attachFastClick(document.body);
 
 * component生态中模块发布的规范遵守情况比较差，导致很多模块安装之后不可用，有些甚至根本安装不上，所以scrat研发小组决定收集业界比较优秀的前端开发资源并放到 [scrat-team](https://github.com/scrat-team) 下维护和发布，为scrat开发体系提供高质量的生态模块。因此如果需要第三方模块，推荐优先从 [scrat-team](https://github.com/scrat-team) 下获取。
 * 推荐每个团队根据自己的业务特点组织自己的模块生态，放在一个GitHub账户内维护，跨项目、跨团队共享十分方便。
-* 模块生态及版本管理是一个细思恐极的问题，遇到问题可以及时 [反馈](/#!/todo) 给我们，一起建设高质量前端开发体系。
+* 模块生态及版本管理是一个细思恐极的问题，遇到问题可以及时 [反馈](https://github.com/scrat-team/scrat/issues) 给我们，一起建设高质量前端开发体系。

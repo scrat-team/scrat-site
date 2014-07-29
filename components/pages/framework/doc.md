@@ -33,7 +33,11 @@ scrat开发体系采用 [scrat.js](https://github.com/scrat-team/scrat.js) 作�
 * http://www.example.com/??proj/1.0.0/b.css,proj/1.0.0/a.css
 * http://www.example.com/??proj/1.0.0/b.js,proj/1.0.0/a.js
 
-请求全部加载完成后才会触发calblack函数。这种工具与框架配合解决模块化静态资源管理的方式，将工程性与前端性能发挥到了极致。
+请求全部加载完成后才会触发calblack函数。这种工具与框架配合解决模块化静态资源管理的方式，将工程性与前端性能发挥到了极致。开启comboe请求的具体配置方法请参考 [这里](/#!/settings?title=framework.combo)。
+
+### 4. 本地缓存
+
+当前 ``require.config`` 中配置了 ``cache`` 选项为 ``true`` 时，scrat会将请求回来的模块化js、css按文件存储到localstorage中，这样用户再次访问页面就不会发起请求，从而加快二次访问的展现速度。开启本地缓存的具体配置方法请参考 [这里](/#!/settings?title=framework.cache)。
 
 ## 接口说明
 

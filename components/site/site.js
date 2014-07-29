@@ -90,7 +90,7 @@ exports.load = function(context, preload){
                             return function(){
                                 dom.scrollTop = anchor.offsetTop;
                             }
-                        })(anchor, dom), 401);
+                        })(anchor, dom), 200);
                     }
                 }
             }

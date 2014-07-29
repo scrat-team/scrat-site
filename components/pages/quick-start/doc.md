@@ -64,7 +64,7 @@ scrat install 命令会根据项目目录下的 ``component.json`` 文件所描�
 }
 ```
 
-scrat以 [component](https://github.com/component/) 作为模块生态，方便获取业界已有的成熟组件，也可以让多个团队通过Github共享组件，提高项目初期的开发效率，有关scrat模块生态的更多内容请阅读 [这里](/#!/todo)。
+scrat以 [component](https://github.com/component/) 作为模块生态，方便获取业界已有的成熟组件，也可以让多个团队通过Github共享组件，提高项目初期的开发效率，有关scrat模块生态的更多内容请阅读 [这里](/#!/components)。
 
 安装完成后，项目目录下出现一个新的文件夹 ``component_modules``，按版本存放第三方组件。
 
@@ -129,7 +129,7 @@ scrat release -wL
 
 保持scrat server start启动的命令行终端不关闭，打开新的命令行终端，执行scrat release -wL命令，即可进入文件监听+浏览器自动刷新模式。修改项目中的代码并保存，浏览器将自动刷新页面，以提高开发效率。
 
-> -wL是 --watch(监听) 和 --live(刷新) 两个参数的简写组合，更多参数及使用方式请查看[这里](/#!/todo)
+> -wL是 --watch(监听) 和 --live(刷新) 两个参数的简写组合，更多参数及使用方式请查看[这里](/#!/command?title=scrat release)
 
 ## 7. 发布项目
 
@@ -182,19 +182,19 @@ scrat会按版本发布项目，发布后的目录路径中会出现项目版本
 scrat release -op
 ```
 
-查看浏览器的network信息可以看到所有js、css、图片均被压缩，静态资源请求也已 [combo](/#!/todo) 形式合并，css雪碧图也完成处理了。
+查看浏览器的network信息可以看到所有js、css、图片均被压缩，静态资源请求也以 [combo](https://github.com/alibaba/nginx-http-concat) 形式合并，css雪碧图也完成处理了。
 
 --------
 
-至此，你已学会了scrat的基本用法，上手应该比较轻松吧:-D，如果在本章节使用上遇到什么问题，可以点击 [这里](/#!/todo) 给我们留言。scrat会给你带来前所未有的开发体验，更多酷爽功能可以继续阅读：
+至此，你已学会了scrat的基本用法，上手应该比较轻松吧:-D，如果在本章节使用上遇到什么问题，可以点击 [这里](https://github.com/scrat-team/scrat/issues) 给我们留言。scrat会给你带来前所未有的开发体验，更多酷爽功能可以继续阅读：
 
-* [使用脚手架创建新项目](/#!/todo)
-* [开发目录结构说明](/#!/todo)
-* [模块化开发](/#!/todo)
-* [模块化框架](/#!/todo)
-* [模块生态](/#!/todo)
-* [文件监听与自动刷新](/#!/todo)
-* [各种构建参数搭配](/#!/todo)
+* [使用脚手架创建新项目](/#!/command?title=scrat init)
+* [开发目录结构说明](/#!/modular?title=规范)
+* [模块化开发](/#!/modular)
+* [模块化框架](/#!/framework)
+* [模块生态](/#!/components)
+* [文件监听与自动刷新](/#!/command?title=本地开发)
+* [各种构建参数搭配](/#!/command?title=scrat release)
 * [部署目录结构说明](/#!/todo)
-* [安装Github上的组件](/#!/todo)
-* [调试服务器使用技巧](/#!/todo)
+* [安装Github上的组件](/#!/components?title=安装)
+* [调试服务器使用技巧](/#!/command?title=scrat%20server%20%26lt%3Bcmd%26gt%3B)

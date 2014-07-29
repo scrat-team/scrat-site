@@ -31,7 +31,7 @@ module.exports = {
             {
                 title: '本地缓存',
                 icon: 'database',
-                href: '/#!/settings?title=framework.cache'
+                href: '/#!/framework?title=4. 本地缓存'
             },
             {
                 title: '代码压缩',

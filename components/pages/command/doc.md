@@ -80,7 +80,7 @@ scrat release -Dolmpd ../output
 
 > 从GitHub安装生态组件，提升开发效率。
 
-scrat采用 [component](https://github.com/component) 作为模块生态，有关模块生态的更多信息请阅读 [这里](/#!/todo)。
+scrat采用 [component](https://github.com/component) 作为模块生态，有关模块生态的更多信息请阅读 [这里](/#!/components)。
 
 在项目目录下准备一个 ``component.json`` 文件，用于记录生态模块安装信息。如果component.json中已声明了依赖，直接执行：
 
@@ -118,7 +118,7 @@ scrat install ftlabs/fastclick@v0.6.5
 
 ## scrat server &lt;cmd&gt;
 
-> nodejs服务器相关命令，无需环境依赖即可调试。
+> nodejs服务器相关命令，方便本地浏览调试项目。
 
 scrat设计之初是考虑和nodejs服务器进行结合的项目开发，因此内置的调试服务器也是来自工程的源代码支持。scrat server有三条服务器相关的命令，分别是：
 
