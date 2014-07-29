@@ -44,7 +44,7 @@ scrat的模块化开发方案采用前端框架与构建工具结合的方式实
 
 ![框架运行原理](../framework/release.png)
 
-有关前端框架与工具配合的工作原理介绍请阅读 [这里](/#!/todo)
+有关前端框架与工具配合的工作原理介绍请阅读 [这里](/#!/framework?title=工作原理)
 
 ### framework.cache
 
