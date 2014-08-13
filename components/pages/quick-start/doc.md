@@ -15,7 +15,7 @@ npm install -g scrat
 使用 [git](http://www.git-scm.com/) clone [官网项目](https://github.com/scrat-team/scrat-site/)（或直接 [下载](https://github.com/scrat-team/scrat-site/archive/master.zip) 解压）
 
 ```bash
-git clone http://git.io/kcqNXQ
+git clone https://github.com/scrat-team/scrat-site.git
 ```
 
 进入项目目录
