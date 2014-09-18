@@ -76,10 +76,6 @@
     z-index: 10;
 }
 
-.site-view-inner {
-    padding: 3%;
-}
-
 .site-view.active {
     opacity: 1;
 
@@ -89,6 +85,10 @@
     -webkit-overflow-scrolling: touch;
 
     z-index: 100;
+}
+
+.site-view-inner {
+    padding: 3%;
 }
 
 .transition-all {
