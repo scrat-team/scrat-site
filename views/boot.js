@@ -32,4 +32,6 @@ require.async(['es5-safe', 'router', 'site', 'fastclick'], function (es5, router
     });
     
     router();
+    
+    window.scrollTo(0, 1);
 });
