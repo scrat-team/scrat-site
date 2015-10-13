@@ -71,12 +71,8 @@ require.config({ cache: true });
 ### framework.combo
 
 * 类型：``boolean``
-* 解释：设置前端框架是否开启静态资源combo合并。设置该配置为 ``true``，并且在scrat构建时加 ``--pack`` 或 ``-p`` 参数才会生效。
+* 解释：设置前端框架是否开启静态资源combo合并。在scrat构建时加 ``--pack`` 或 ``-p`` 参数即可生效。
 * 示例：
-fis-conf.js配置
-```javascript
-fis.config.set('framework.combo', true);
-```
 构建命令
 ```bash
 scrat release -p
