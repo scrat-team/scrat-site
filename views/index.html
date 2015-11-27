@@ -58,5 +58,21 @@ window['_fs_org'] = 'NH0N';
 <body>
 <script src="lib/lib.js"></script>
 <script src="boot.js?__inline"></script>
+<script>
+ var id;
+ try {
+  if(localStorage._uuid_){
+   id = localStorage._uuid_;
+  } else {
+   id = Math.random() + '-' + Date.now();
+   localStorage.setItem('_uuid_', id);
+  }
+ }
+ FS.identify(id, {
+  displayName: id,
+  email: 'danielfalko@example.com'
+  // TODO: Add your own custom user variables here.
+});
+</script>
 </body>
 </html>
